@@ -1,0 +1,3075 @@
+-----  Stop and Wait Network Simulator Version 1.1 -------- 
+
+Enter the number of messages to simulate: Enter  packet loss probability [enter 0.0 for no loss]:Enter packet corruption probability [0.0 for no corruption]:Enter average time between messages from sender's layer5 [ > 0.0]:Enter TRACE:          GENERATE NEXT ARRIVAL: creating new arrival
+current time:0.000000
+--------------
+Event List Follows:
+Event time: 1.309402, type: 0 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: aaaaaaaaaaaaaaaaaaaa
+A-output.
+send
+          START TIMER: starting timer at 1.309402
+          TOLAYER3: seq: 94, ack 0, check: -52780, data: aaaaaaaaaaaaaaaaaaaa
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.500000
+current time:1.309402
+--------------
+Event List Follows:
+Event time: 1.571300, type: 1 entity: 1
+Event time: 2.458739, type: 0 entity: 0
+Event time: 2.809402, type: 2 entity: 0
+--------------
+B_input
+expect:94, get 94
+          TOLAYER3: seq: 237, ack 114, check: -36218, data: AAAAAAAAAAAAAAAAAAAA
+          TOLAYER3: scheduling arrival on other side
+current time:1.571300
+--------------
+Event List Follows:
+Event time: 2.419760, type: 1 entity: 0
+Event time: 2.458739, type: 0 entity: 0
+Event time: 2.809402, type: 2 entity: 0
+--------------
+A_input
+          STOP TIMER: stopping timer at 2.419760
+current time:2.419760
+--------------
+Event List Follows:
+Event time: 2.458739, type: 0 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: bbbbbbbbbbbbbbbbbbbb
+A-output.
+send
+          START TIMER: starting timer at 2.458739
+          TOLAYER3: seq: 114, ack 257, check: -55370, data: bbbbbbbbbbbbbbbbbbbb
+          TOLAYER3: packet being corrupted
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.124153
+current time:2.458739
+--------------
+Event List Follows:
+Event time: 2.617483, type: 0 entity: 0
+Event time: 2.843991, type: 1 entity: 1
+Event time: 3.582892, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: cccccccccccccccccccc
+A-output.
+send
+          TOLAYER3: seq: 134, ack 257, check: -57960, data: cccccccccccccccccccc
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.124153
+current time:2.617483
+--------------
+Event List Follows:
+Event time: 2.691903, type: 0 entity: 0
+Event time: 2.843991, type: 1 entity: 1
+Event time: 3.092175, type: 1 entity: 1
+Event time: 3.582892, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: dddddddddddddddddddd
+A-output.
+send
+          TOLAYER3: seq: 154, ack 257, check: -60550, data: dddddddddddddddddddd
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.124153
+current time:2.691903
+--------------
+Event List Follows:
+Event time: 2.843991, type: 1 entity: 1
+Event time: 3.092175, type: 1 entity: 1
+Event time: 3.582866, type: 1 entity: 1
+Event time: 3.582892, type: 2 entity: 0
+Event time: 3.697246, type: 0 entity: 0
+--------------
+B_input
+check_sum is not correct, so drop it
+current time:2.843991
+--------------
+Event List Follows:
+Event time: 3.092175, type: 1 entity: 1
+Event time: 3.582866, type: 1 entity: 1
+Event time: 3.582892, type: 2 entity: 0
+Event time: 3.697246, type: 0 entity: 0
+--------------
+B_input
+expect:114, get 134, seq is not expected, so drop it.
+current time:3.092175
+--------------
+Event List Follows:
+Event time: 3.582866, type: 1 entity: 1
+Event time: 3.582892, type: 2 entity: 0
+Event time: 3.697246, type: 0 entity: 0
+--------------
+B_input
+expect:114, get 154, seq is not expected, so drop it.
+current time:3.582866
+--------------
+Event List Follows:
+Event time: 3.582892, type: 2 entity: 0
+Event time: 3.697246, type: 0 entity: 0
+--------------
+A_timerinterrupt
+try-send
+send
+          START TIMER: starting timer at 3.582892
+          TOLAYER3: seq: 114, ack 257, check: -55370, data: bbbbbbbbbbbbbbbbbbbb
+          TOLAYER3: scheduling arrival on other side
+current time:3.582892
+--------------
+Event List Follows:
+Event time: 3.697246, type: 0 entity: 0
+Event time: 3.734707, type: 1 entity: 1
+Event time: 4.707044, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: eeeeeeeeeeeeeeeeeeee
+A-output.
+send
+          TOLAYER3: packet being lost
+timeout_interval = 1.124153
+current time:3.697246
+--------------
+Event List Follows:
+Event time: 3.734707, type: 1 entity: 1
+Event time: 4.409193, type: 0 entity: 0
+Event time: 4.707044, type: 2 entity: 0
+--------------
+B_input
+expect:114, get 114
+          TOLAYER3: packet being lost
+current time:3.734707
+--------------
+Event List Follows:
+Event time: 4.409193, type: 0 entity: 0
+Event time: 4.707044, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: ffffffffffffffffffff
+A-output.
+send
+          TOLAYER3: seq: 154, ack 257, check: -60550, data: dddddddddddddddddddd
+          TOLAYER3: packet being corrupted
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.124153
+current time:4.409193
+--------------
+Event List Follows:
+Event time: 4.707044, type: 2 entity: 0
+Event time: 5.098285, type: 1 entity: 1
+Event time: 5.783787, type: 0 entity: 0
+--------------
+A_timerinterrupt
+try-send
+send
+          START TIMER: starting timer at 4.707044
+          TOLAYER3: seq: 114, ack 257, check: -55370, data: bbbbbbbbbbbbbbbbbbbb
+          TOLAYER3: scheduling arrival on other side
+current time:4.707044
+--------------
+Event List Follows:
+Event time: 5.098285, type: 1 entity: 1
+Event time: 5.302678, type: 1 entity: 1
+Event time: 5.783787, type: 0 entity: 0
+Event time: 5.831197, type: 2 entity: 0
+--------------
+B_input
+expect:134, get 154, seq is not expected, so drop it.
+current time:5.098285
+--------------
+Event List Follows:
+Event time: 5.302678, type: 1 entity: 1
+Event time: 5.783787, type: 0 entity: 0
+Event time: 5.831197, type: 2 entity: 0
+--------------
+B_input
+expect:134, get 114, seq is not expected, so drop it.
+current time:5.302678
+--------------
+Event List Follows:
+Event time: 5.783787, type: 0 entity: 0
+Event time: 5.831197, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: gggggggggggggggggggg
+A-output.
+send
+          TOLAYER3: seq: 134, ack 257, check: -57960, data: cccccccccccccccccccc
+          TOLAYER3: packet being corrupted
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.124153
+current time:5.783787
+--------------
+Event List Follows:
+Event time: 5.831197, type: 2 entity: 0
+Event time: 5.919929, type: 0 entity: 0
+Event time: 6.322196, type: 1 entity: 1
+--------------
+A_timerinterrupt
+try-send
+send
+          START TIMER: starting timer at 5.831197
+          TOLAYER3: seq: 114, ack 257, check: -55370, data: bbbbbbbbbbbbbbbbbbbb
+          TOLAYER3: scheduling arrival on other side
+current time:5.831197
+--------------
+Event List Follows:
+Event time: 5.855673, type: 1 entity: 1
+Event time: 5.919929, type: 0 entity: 0
+Event time: 6.322196, type: 1 entity: 1
+Event time: 6.955350, type: 2 entity: 0
+--------------
+B_input
+expect:134, get 114, seq is not expected, so drop it.
+current time:5.855673
+--------------
+Event List Follows:
+Event time: 5.919929, type: 0 entity: 0
+Event time: 6.322196, type: 1 entity: 1
+Event time: 6.955350, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: hhhhhhhhhhhhhhhhhhhh
+A-output.
+send
+          TOLAYER3: seq: 134, ack 257, check: -57960, data: cccccccccccccccccccc
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.124153
+current time:5.919929
+--------------
+Event List Follows:
+Event time: 5.976762, type: 1 entity: 1
+Event time: 6.322196, type: 1 entity: 1
+Event time: 6.955350, type: 2 entity: 0
+Event time: 7.130347, type: 0 entity: 0
+--------------
+B_input
+expect:134, get 134
+          TOLAYER3: seq: 237, ack 154, check: -41358, data: CCCCCCCCCCCCCCCCCCCC
+          TOLAYER3: scheduling arrival on other side
+current time:5.976762
+--------------
+Event List Follows:
+Event time: 6.322196, type: 1 entity: 1
+Event time: 6.567582, type: 1 entity: 0
+Event time: 6.955350, type: 2 entity: 0
+Event time: 7.130347, type: 0 entity: 0
+--------------
+B_input
+expect:154, get 134, seq is not expected, so drop it.
+current time:6.322196
+--------------
+Event List Follows:
+Event time: 6.567582, type: 1 entity: 0
+Event time: 6.955350, type: 2 entity: 0
+Event time: 7.130347, type: 0 entity: 0
+--------------
+A_input
+          STOP TIMER: stopping timer at 6.567582
+current time:6.567582
+--------------
+Event List Follows:
+Event time: 7.130347, type: 0 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: iiiiiiiiiiiiiiiiiiii
+A-output.
+send
+          START TIMER: starting timer at 7.130347
+          TOLAYER3: seq: 154, ack 257, check: -60550, data: dddddddddddddddddddd
+          TOLAYER3: packet being corrupted
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.416937
+current time:7.130347
+--------------
+Event List Follows:
+Event time: 7.544399, type: 0 entity: 0
+Event time: 8.009323, type: 1 entity: 1
+Event time: 8.547284, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: jjjjjjjjjjjjjjjjjjjj
+A-output.
+send
+          TOLAYER3: seq: 174, ack 257, check: -63140, data: eeeeeeeeeeeeeeeeeeee
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.416937
+current time:7.544399
+--------------
+Event List Follows:
+Event time: 7.657962, type: 1 entity: 1
+Event time: 8.009323, type: 1 entity: 1
+Event time: 8.547284, type: 2 entity: 0
+Event time: 8.849730, type: 0 entity: 0
+--------------
+B_input
+expect:154, get 174, seq is not expected, so drop it.
+current time:7.657962
+--------------
+Event List Follows:
+Event time: 8.009323, type: 1 entity: 1
+Event time: 8.547284, type: 2 entity: 0
+Event time: 8.849730, type: 0 entity: 0
+--------------
+B_input
+check_sum is not correct, so drop it
+current time:8.009323
+--------------
+Event List Follows:
+Event time: 8.547284, type: 2 entity: 0
+Event time: 8.849730, type: 0 entity: 0
+--------------
+A_timerinterrupt
+try-send
+send
+          START TIMER: starting timer at 8.547284
+          TOLAYER3: packet being lost
+current time:8.547284
+--------------
+Event List Follows:
+Event time: 8.849730, type: 0 entity: 0
+Event time: 9.964221, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: kkkkkkkkkkkkkkkkkkkk
+A-output.
+send
+          TOLAYER3: packet being lost
+timeout_interval = 1.416937
+current time:8.849730
+--------------
+Event List Follows:
+Event time: 9.144860, type: 0 entity: 0
+Event time: 9.964221, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: llllllllllllllllllll
+A-output.
+send
+          TOLAYER3: seq: 194, ack 257, check: -195, data: ffffffffffffffffffff
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.416937
+current time:9.144860
+--------------
+Event List Follows:
+Event time: 9.314460, type: 0 entity: 0
+Event time: 9.701766, type: 1 entity: 1
+Event time: 9.964221, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: mmmmmmmmmmmmmmmmmmmm
+A-output.
+send
+          TOLAYER3: seq: 214, ack 257, check: -2785, data: gggggggggggggggggggg
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.416937
+current time:9.314460
+--------------
+Event List Follows:
+Event time: 9.701766, type: 1 entity: 1
+Event time: 9.811416, type: 1 entity: 1
+Event time: 9.964221, type: 2 entity: 0
+Event time: 10.199780, type: 0 entity: 0
+--------------
+B_input
+expect:154, get 194, seq is not expected, so drop it.
+current time:9.701766
+--------------
+Event List Follows:
+Event time: 9.811416, type: 1 entity: 1
+Event time: 9.964221, type: 2 entity: 0
+Event time: 10.199780, type: 0 entity: 0
+--------------
+B_input
+expect:154, get 214, seq is not expected, so drop it.
+current time:9.811416
+--------------
+Event List Follows:
+Event time: 9.964221, type: 2 entity: 0
+Event time: 10.199780, type: 0 entity: 0
+--------------
+A_timerinterrupt
+try-send
+send
+          START TIMER: starting timer at 9.964221
+          TOLAYER3: seq: 154, ack 257, check: -60550, data: dddddddddddddddddddd
+          TOLAYER3: scheduling arrival on other side
+current time:9.964221
+--------------
+Event List Follows:
+Event time: 10.199780, type: 0 entity: 0
+Event time: 10.451649, type: 1 entity: 1
+Event time: 11.381158, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: nnnnnnnnnnnnnnnnnnnn
+A-output.
+send
+          TOLAYER3: packet being lost
+timeout_interval = 1.416937
+current time:10.199780
+--------------
+Event List Follows:
+Event time: 10.451649, type: 1 entity: 1
+Event time: 11.267194, type: 0 entity: 0
+Event time: 11.381158, type: 2 entity: 0
+--------------
+B_input
+expect:154, get 154
+          TOLAYER3: seq: 237, ack 174, check: -43928, data: DDDDDDDDDDDDDDDDDDDD
+          TOLAYER3: scheduling arrival on other side
+current time:10.451649
+--------------
+Event List Follows:
+Event time: 11.209773, type: 1 entity: 0
+Event time: 11.267194, type: 0 entity: 0
+Event time: 11.381158, type: 2 entity: 0
+--------------
+A_input
+          STOP TIMER: stopping timer at 11.209773
+          START TIMER: starting timer at 11.209773
+current time:11.209773
+--------------
+Event List Follows:
+Event time: 11.267194, type: 0 entity: 0
+Event time: 12.561693, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: oooooooooooooooooooo
+A-output.
+send
+          TOLAYER3: seq: 194, ack 257, check: -195, data: ffffffffffffffffffff
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.351921
+current time:11.267194
+--------------
+Event List Follows:
+Event time: 12.136738, type: 1 entity: 1
+Event time: 12.561693, type: 2 entity: 0
+Event time: 12.579225, type: 0 entity: 0
+--------------
+B_input
+expect:174, get 194, seq is not expected, so drop it.
+current time:12.136738
+--------------
+Event List Follows:
+Event time: 12.561693, type: 2 entity: 0
+Event time: 12.579225, type: 0 entity: 0
+--------------
+A_timerinterrupt
+try-send
+send
+          START TIMER: starting timer at 12.561693
+          TOLAYER3: seq: 174, ack 257, check: -63140, data: eeeeeeeeeeeeeeeeeeee
+          TOLAYER3: scheduling arrival on other side
+current time:12.561693
+--------------
+Event List Follows:
+Event time: 12.579225, type: 0 entity: 0
+Event time: 12.972428, type: 1 entity: 1
+Event time: 13.913614, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: pppppppppppppppppppp
+A-output.
+send
+          TOLAYER3: seq: 194, ack 257, check: -195, data: ffffffffffffffffffff
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.351921
+current time:12.579225
+--------------
+Event List Follows:
+Event time: 12.850707, type: 0 entity: 0
+Event time: 12.972428, type: 1 entity: 1
+Event time: 13.522356, type: 1 entity: 1
+Event time: 13.913614, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: qqqqqqqqqqqqqqqqqqqq
+A-output.
+send
+          TOLAYER3: packet being lost
+timeout_interval = 1.351921
+current time:12.850707
+--------------
+Event List Follows:
+Event time: 12.972428, type: 1 entity: 1
+Event time: 13.286151, type: 0 entity: 0
+Event time: 13.522356, type: 1 entity: 1
+Event time: 13.913614, type: 2 entity: 0
+--------------
+B_input
+expect:174, get 174
+          TOLAYER3: seq: 237, ack 194, check: -46498, data: EEEEEEEEEEEEEEEEEEEE
+          TOLAYER3: scheduling arrival on other side
+current time:12.972428
+--------------
+Event List Follows:
+Event time: 13.286151, type: 0 entity: 0
+Event time: 13.522356, type: 1 entity: 1
+Event time: 13.556792, type: 1 entity: 0
+Event time: 13.913614, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: rrrrrrrrrrrrrrrrrrrr
+A-output.
+send
+          TOLAYER3: packet being lost
+timeout_interval = 1.351921
+current time:13.286151
+--------------
+Event List Follows:
+Event time: 13.366122, type: 0 entity: 0
+Event time: 13.522356, type: 1 entity: 1
+Event time: 13.556792, type: 1 entity: 0
+Event time: 13.913614, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: ssssssssssssssssssss
+A-output.
+send
+          TOLAYER3: seq: 254, ack 257, check: -7965, data: iiiiiiiiiiiiiiiiiiii
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.351921
+current time:13.366122
+--------------
+Event List Follows:
+Event time: 13.435642, type: 1 entity: 1
+Event time: 13.522356, type: 1 entity: 1
+Event time: 13.556792, type: 1 entity: 0
+Event time: 13.796036, type: 0 entity: 0
+Event time: 13.913614, type: 2 entity: 0
+--------------
+B_input
+expect:194, get 254, seq is not expected, so drop it.
+current time:13.435642
+--------------
+Event List Follows:
+Event time: 13.522356, type: 1 entity: 1
+Event time: 13.556792, type: 1 entity: 0
+Event time: 13.796036, type: 0 entity: 0
+Event time: 13.913614, type: 2 entity: 0
+--------------
+B_input
+expect:194, get 194
+          TOLAYER3: seq: 237, ack 214, check: -49068, data: FFFFFFFFFFFFFFFFFFFF
+          TOLAYER3: scheduling arrival on other side
+current time:13.522356
+--------------
+Event List Follows:
+Event time: 13.556792, type: 1 entity: 0
+Event time: 13.796036, type: 0 entity: 0
+Event time: 13.903279, type: 1 entity: 0
+Event time: 13.913614, type: 2 entity: 0
+--------------
+A_input
+          STOP TIMER: stopping timer at 13.556792
+          START TIMER: starting timer at 13.556792
+current time:13.556792
+--------------
+Event List Follows:
+Event time: 13.796036, type: 0 entity: 0
+Event time: 13.903279, type: 1 entity: 0
+Event time: 15.498828, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: tttttttttttttttttttt
+A-output.
+send
+          TOLAYER3: packet being lost
+timeout_interval = 1.942036
+current time:13.796036
+--------------
+Event List Follows:
+Event time: 13.886860, type: 0 entity: 0
+Event time: 13.903279, type: 1 entity: 0
+Event time: 15.498828, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: uuuuuuuuuuuuuuuuuuuu
+A-output.
+send
+          TOLAYER3: seq: 294, ack 257, check: -13145, data: kkkkkkkkkkkkkkkkkkkk
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.942036
+current time:13.886860
+--------------
+Event List Follows:
+Event time: 13.903279, type: 1 entity: 0
+Event time: 13.913840, type: 0 entity: 0
+Event time: 14.424468, type: 1 entity: 1
+Event time: 15.498828, type: 2 entity: 0
+--------------
+A_input
+          STOP TIMER: stopping timer at 13.903279
+          START TIMER: starting timer at 13.903279
+current time:13.903279
+--------------
+Event List Follows:
+Event time: 13.913840, type: 0 entity: 0
+Event time: 14.424468, type: 1 entity: 1
+Event time: 16.330318, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: vvvvvvvvvvvvvvvvvvvv
+A-output.
+send
+          TOLAYER3: packet being lost
+timeout_interval = 2.427039
+current time:13.913840
+--------------
+Event List Follows:
+Event time: 14.424468, type: 1 entity: 1
+Event time: 15.149533, type: 0 entity: 0
+Event time: 16.330318, type: 2 entity: 0
+--------------
+B_input
+expect:214, get 294, seq is not expected, so drop it.
+current time:14.424468
+--------------
+Event List Follows:
+Event time: 15.149533, type: 0 entity: 0
+Event time: 16.330318, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: wwwwwwwwwwwwwwwwwwww
+A-output.
+send
+          TOLAYER3: seq: 334, ack 257, check: -18325, data: mmmmmmmmmmmmmmmmmmmm
+          TOLAYER3: packet being corrupted
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 2.427039
+current time:15.149533
+--------------
+Event List Follows:
+Event time: 15.204107, type: 1 entity: 1
+Event time: 15.305554, type: 0 entity: 0
+Event time: 16.330318, type: 2 entity: 0
+--------------
+B_input
+expect:214, get 334, seq is not expected, so drop it.
+current time:15.204107
+--------------
+Event List Follows:
+Event time: 15.305554, type: 0 entity: 0
+Event time: 16.330318, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: xxxxxxxxxxxxxxxxxxxx
+A-output.
+send
+          TOLAYER3: seq: 354, ack 257, check: -20915, data: nnnnnnnnnnnnnnnnnnnn
+          TOLAYER3: packet being corrupted
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 2.427039
+current time:15.305554
+--------------
+Event List Follows:
+Event time: 15.616102, type: 0 entity: 0
+Event time: 16.111738, type: 1 entity: 1
+Event time: 16.330318, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: yyyyyyyyyyyyyyyyyyyy
+A-output.
+send
+          TOLAYER3: seq: 374, ack 257, check: -23505, data: oooooooooooooooooooo
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 2.427039
+current time:15.616102
+--------------
+Event List Follows:
+Event time: 16.111738, type: 1 entity: 1
+Event time: 16.330318, type: 2 entity: 0
+Event time: 16.518624, type: 1 entity: 1
+Event time: 16.864384, type: 0 entity: 0
+--------------
+B_input
+expect:214, get 354, seq is not expected, so drop it.
+current time:16.111738
+--------------
+Event List Follows:
+Event time: 16.330318, type: 2 entity: 0
+Event time: 16.518624, type: 1 entity: 1
+Event time: 16.864384, type: 0 entity: 0
+--------------
+A_timerinterrupt
+try-send
+send
+          START TIMER: starting timer at 16.330318
+          TOLAYER3: seq: 214, ack 257, check: -2785, data: gggggggggggggggggggg
+          TOLAYER3: scheduling arrival on other side
+current time:16.330318
+--------------
+Event List Follows:
+Event time: 16.518624, type: 1 entity: 1
+Event time: 16.851187, type: 1 entity: 1
+Event time: 16.864384, type: 0 entity: 0
+Event time: 18.757357, type: 2 entity: 0
+--------------
+B_input
+expect:214, get 374, seq is not expected, so drop it.
+current time:16.518624
+--------------
+Event List Follows:
+Event time: 16.851187, type: 1 entity: 1
+Event time: 16.864384, type: 0 entity: 0
+Event time: 18.757357, type: 2 entity: 0
+--------------
+B_input
+expect:214, get 214
+          TOLAYER3: seq: 237, ack 234, check: -51638, data: GGGGGGGGGGGGGGGGGGGG
+          TOLAYER3: scheduling arrival on other side
+current time:16.851187
+--------------
+Event List Follows:
+Event time: 16.864384, type: 0 entity: 0
+Event time: 17.754619, type: 1 entity: 0
+Event time: 18.757357, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: zzzzzzzzzzzzzzzzzzzz
+A-output.
+send
+          TOLAYER3: seq: 234, ack 257, check: -5375, data: hhhhhhhhhhhhhhhhhhhh
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 2.427039
+current time:16.864384
+--------------
+Event List Follows:
+Event time: 17.302074, type: 1 entity: 1
+Event time: 17.592611, type: 0 entity: 0
+Event time: 17.754619, type: 1 entity: 0
+Event time: 18.757357, type: 2 entity: 0
+--------------
+B_input
+expect:234, get 234
+          TOLAYER3: packet being lost
+current time:17.302074
+--------------
+Event List Follows:
+Event time: 17.592611, type: 0 entity: 0
+Event time: 17.754619, type: 1 entity: 0
+Event time: 18.757357, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: aaaaaaaaaaaaaaaaaaaa
+A-output.
+send
+          TOLAYER3: seq: 254, ack 257, check: -7965, data: iiiiiiiiiiiiiiiiiiii
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 2.427039
+current time:17.592611
+--------------
+Event List Follows:
+Event time: 17.754619, type: 1 entity: 0
+Event time: 18.196318, type: 1 entity: 1
+Event time: 18.361397, type: 0 entity: 0
+Event time: 18.757357, type: 2 entity: 0
+--------------
+A_input
+          STOP TIMER: stopping timer at 17.754619
+          START TIMER: starting timer at 17.754619
+current time:17.754619
+--------------
+Event List Follows:
+Event time: 18.196318, type: 1 entity: 1
+Event time: 18.361397, type: 0 entity: 0
+Event time: 20.297219, type: 2 entity: 0
+--------------
+B_input
+expect:254, get 254
+          TOLAYER3: seq: 237, ack 274, check: -56778, data: IIIIIIIIIIIIIIIIIIII
+          TOLAYER3: scheduling arrival on other side
+current time:18.196318
+--------------
+Event List Follows:
+Event time: 18.361397, type: 0 entity: 0
+Event time: 19.107455, type: 1 entity: 0
+Event time: 20.297219, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: bbbbbbbbbbbbbbbbbbbb
+A-output.
+send
+          TOLAYER3: seq: 274, ack 257, check: -10555, data: jjjjjjjjjjjjjjjjjjjj
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 2.542600
+current time:18.361397
+--------------
+Event List Follows:
+Event time: 18.884739, type: 1 entity: 1
+Event time: 19.107455, type: 1 entity: 0
+Event time: 19.245793, type: 0 entity: 0
+Event time: 20.297219, type: 2 entity: 0
+--------------
+B_input
+expect:274, get 274
+          TOLAYER3: seq: 237, ack 294, check: -59348, data: JJJJJJJJJJJJJJJJJJJJ
+          TOLAYER3: scheduling arrival on other side
+current time:18.884739
+--------------
+Event List Follows:
+Event time: 19.107455, type: 1 entity: 0
+Event time: 19.245793, type: 0 entity: 0
+Event time: 19.529235, type: 1 entity: 0
+Event time: 20.297219, type: 2 entity: 0
+--------------
+A_input
+          STOP TIMER: stopping timer at 19.107455
+          START TIMER: starting timer at 19.107455
+current time:19.107455
+--------------
+Event List Follows:
+Event time: 19.245793, type: 0 entity: 0
+Event time: 19.529235, type: 1 entity: 0
+Event time: 21.247948, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: cccccccccccccccccccc
+A-output.
+send
+          TOLAYER3: packet being lost
+timeout_interval = 2.140493
+current time:19.245793
+--------------
+Event List Follows:
+Event time: 19.522462, type: 0 entity: 0
+Event time: 19.529235, type: 1 entity: 0
+Event time: 21.247948, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: dddddddddddddddddddd
+A-output.
+send
+          TOLAYER3: seq: 314, ack 257, check: -15735, data: llllllllllllllllllll
+          TOLAYER3: packet being corrupted
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 2.140493
+current time:19.522462
+--------------
+Event List Follows:
+Event time: 19.529235, type: 1 entity: 0
+Event time: 19.857391, type: 1 entity: 1
+Event time: 20.126557, type: 0 entity: 0
+Event time: 21.247948, type: 2 entity: 0
+--------------
+A_input
+          STOP TIMER: stopping timer at 19.529235
+          START TIMER: starting timer at 19.529235
+current time:19.529235
+--------------
+Event List Follows:
+Event time: 19.857391, type: 1 entity: 1
+Event time: 20.126557, type: 0 entity: 0
+Event time: 21.915087, type: 2 entity: 0
+--------------
+B_input
+expect:294, get 314, seq is not expected, so drop it.
+current time:19.857391
+--------------
+Event List Follows:
+Event time: 20.126557, type: 0 entity: 0
+Event time: 21.915087, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: eeeeeeeeeeeeeeeeeeee
+A-output.
+send
+          TOLAYER3: packet being lost
+timeout_interval = 2.385851
+current time:20.126557
+--------------
+Event List Follows:
+Event time: 21.120927, type: 0 entity: 0
+Event time: 21.915087, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: ffffffffffffffffffff
+A-output.
+send
+          TOLAYER3: seq: 354, ack 257, check: -20915, data: nnnnnnnnnnnnnnnnnnnn
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 2.385851
+current time:21.120927
+--------------
+Event List Follows:
+Event time: 21.379020, type: 1 entity: 1
+Event time: 21.915087, type: 2 entity: 0
+Event time: 22.113471, type: 0 entity: 0
+--------------
+B_input
+expect:294, get 354, seq is not expected, so drop it.
+current time:21.379020
+--------------
+Event List Follows:
+Event time: 21.915087, type: 2 entity: 0
+Event time: 22.113471, type: 0 entity: 0
+--------------
+A_timerinterrupt
+try-send
+send
+          START TIMER: starting timer at 21.915087
+          TOLAYER3: seq: 294, ack 257, check: -13145, data: kkkkkkkkkkkkkkkkkkkk
+          TOLAYER3: scheduling arrival on other side
+current time:21.915087
+--------------
+Event List Follows:
+Event time: 22.113471, type: 0 entity: 0
+Event time: 22.172134, type: 1 entity: 1
+Event time: 24.300938, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: gggggggggggggggggggg
+A-output.
+send
+          TOLAYER3: packet being lost
+timeout_interval = 2.385851
+current time:22.113471
+--------------
+Event List Follows:
+Event time: 22.172134, type: 1 entity: 1
+Event time: 23.075728, type: 0 entity: 0
+Event time: 24.300938, type: 2 entity: 0
+--------------
+B_input
+expect:294, get 294
+          TOLAYER3: seq: 237, ack 314, check: -61918, data: KKKKKKKKKKKKKKKKKKKK
+          TOLAYER3: scheduling arrival on other side
+current time:22.172134
+--------------
+Event List Follows:
+Event time: 22.268015, type: 1 entity: 0
+Event time: 23.075728, type: 0 entity: 0
+Event time: 24.300938, type: 2 entity: 0
+--------------
+A_input
+          STOP TIMER: stopping timer at 22.268015
+          START TIMER: starting timer at 22.268015
+current time:22.268015
+--------------
+Event List Follows:
+Event time: 23.075728, type: 0 entity: 0
+Event time: 24.611238, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: hhhhhhhhhhhhhhhhhhhh
+A-output.
+send
+          TOLAYER3: seq: 334, ack 257, check: -18325, data: mmmmmmmmmmmmmmmmmmmm
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 2.343222
+current time:23.075728
+--------------
+Event List Follows:
+Event time: 23.343972, type: 1 entity: 1
+Event time: 24.255060, type: 0 entity: 0
+Event time: 24.611238, type: 2 entity: 0
+--------------
+B_input
+expect:314, get 334, seq is not expected, so drop it.
+current time:23.343972
+--------------
+Event List Follows:
+Event time: 24.255060, type: 0 entity: 0
+Event time: 24.611238, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: iiiiiiiiiiiiiiiiiiii
+A-output.
+send
+          TOLAYER3: seq: 354, ack 257, check: -20915, data: nnnnnnnnnnnnnnnnnnnn
+          TOLAYER3: packet being corrupted
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 2.343222
+current time:24.255060
+--------------
+Event List Follows:
+Event time: 24.301353, type: 1 entity: 1
+Event time: 24.611238, type: 2 entity: 0
+Event time: 25.115774, type: 0 entity: 0
+--------------
+B_input
+expect:314, get 354, seq is not expected, so drop it.
+current time:24.301353
+--------------
+Event List Follows:
+Event time: 24.611238, type: 2 entity: 0
+Event time: 25.115774, type: 0 entity: 0
+--------------
+A_timerinterrupt
+try-send
+send
+          START TIMER: starting timer at 24.611238
+          TOLAYER3: seq: 314, ack 257, check: -15735, data: llllllllllllllllllll
+          TOLAYER3: packet being corrupted
+          TOLAYER3: scheduling arrival on other side
+current time:24.611238
+--------------
+Event List Follows:
+Event time: 24.790697, type: 1 entity: 1
+Event time: 25.115774, type: 0 entity: 0
+Event time: 26.954460, type: 2 entity: 0
+--------------
+B_input
+check_sum is not correct, so drop it
+current time:24.790697
+--------------
+Event List Follows:
+Event time: 25.115774, type: 0 entity: 0
+Event time: 26.954460, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: jjjjjjjjjjjjjjjjjjjj
+A-output.
+send
+          TOLAYER3: packet being lost
+timeout_interval = 2.343222
+current time:25.115774
+--------------
+Event List Follows:
+Event time: 26.359562, type: 0 entity: 0
+Event time: 26.954460, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: kkkkkkkkkkkkkkkkkkkk
+A-output.
+send
+          TOLAYER3: packet being lost
+timeout_interval = 2.343222
+current time:26.359562
+--------------
+Event List Follows:
+Event time: 26.774346, type: 0 entity: 0
+Event time: 26.954460, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: llllllllllllllllllll
+A-output.
+send
+          TOLAYER3: seq: 374, ack 257, check: -23505, data: oooooooooooooooooooo
+          TOLAYER3: packet being corrupted
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 2.343222
+current time:26.774346
+--------------
+Event List Follows:
+Event time: 26.954460, type: 2 entity: 0
+Event time: 27.700294, type: 1 entity: 1
+Event time: 27.710806, type: 0 entity: 0
+--------------
+A_timerinterrupt
+try-send
+send
+          START TIMER: starting timer at 26.954460
+          TOLAYER3: packet being lost
+current time:26.954460
+--------------
+Event List Follows:
+Event time: 27.700294, type: 1 entity: 1
+Event time: 27.710806, type: 0 entity: 0
+Event time: 29.297682, type: 2 entity: 0
+--------------
+B_input
+expect:314, get 374, seq is not expected, so drop it.
+current time:27.700294
+--------------
+Event List Follows:
+Event time: 27.710806, type: 0 entity: 0
+Event time: 29.297682, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: mmmmmmmmmmmmmmmmmmmm
+A-output.
+send
+          TOLAYER3: packet being lost
+timeout_interval = 2.343222
+current time:27.710806
+--------------
+Event List Follows:
+Event time: 27.713775, type: 0 entity: 0
+Event time: 29.297682, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: nnnnnnnnnnnnnnnnnnnn
+A-output.
+send
+          TOLAYER3: seq: 354, ack 257, check: -20915, data: nnnnnnnnnnnnnnnnnnnn
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 2.343222
+current time:27.713775
+--------------
+Event List Follows:
+Event time: 27.979795, type: 0 entity: 0
+Event time: 28.251007, type: 1 entity: 1
+Event time: 29.297682, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: oooooooooooooooooooo
+A-output.
+send
+          TOLAYER3: seq: 374, ack 257, check: -23505, data: oooooooooooooooooooo
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 2.343222
+current time:27.979795
+--------------
+Event List Follows:
+Event time: 28.155215, type: 0 entity: 0
+Event time: 28.251007, type: 1 entity: 1
+Event time: 28.570958, type: 1 entity: 1
+Event time: 29.297682, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: pppppppppppppppppppp
+A-output.
+send
+          TOLAYER3: seq: 394, ack 257, check: -26095, data: pppppppppppppppppppp
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 2.343222
+current time:28.155215
+--------------
+Event List Follows:
+Event time: 28.251007, type: 1 entity: 1
+Event time: 28.367476, type: 0 entity: 0
+Event time: 28.570958, type: 1 entity: 1
+Event time: 28.688051, type: 1 entity: 1
+Event time: 29.297682, type: 2 entity: 0
+--------------
+B_input
+expect:314, get 354, seq is not expected, so drop it.
+current time:28.251007
+--------------
+Event List Follows:
+Event time: 28.367476, type: 0 entity: 0
+Event time: 28.570958, type: 1 entity: 1
+Event time: 28.688051, type: 1 entity: 1
+Event time: 29.297682, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: qqqqqqqqqqqqqqqqqqqq
+A-output.
+send
+          TOLAYER3: seq: 414, ack 257, check: -28685, data: qqqqqqqqqqqqqqqqqqqq
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 2.343222
+current time:28.367476
+--------------
+Event List Follows:
+Event time: 28.570958, type: 1 entity: 1
+Event time: 28.688051, type: 1 entity: 1
+Event time: 29.029573, type: 1 entity: 1
+Event time: 29.297682, type: 2 entity: 0
+Event time: 29.450623, type: 0 entity: 0
+--------------
+B_input
+expect:314, get 374, seq is not expected, so drop it.
+current time:28.570958
+--------------
+Event List Follows:
+Event time: 28.688051, type: 1 entity: 1
+Event time: 29.029573, type: 1 entity: 1
+Event time: 29.297682, type: 2 entity: 0
+Event time: 29.450623, type: 0 entity: 0
+--------------
+B_input
+expect:314, get 394, seq is not expected, so drop it.
+current time:28.688051
+--------------
+Event List Follows:
+Event time: 29.029573, type: 1 entity: 1
+Event time: 29.297682, type: 2 entity: 0
+Event time: 29.450623, type: 0 entity: 0
+--------------
+B_input
+expect:314, get 414, seq is not expected, so drop it.
+current time:29.029573
+--------------
+Event List Follows:
+Event time: 29.297682, type: 2 entity: 0
+Event time: 29.450623, type: 0 entity: 0
+--------------
+A_timerinterrupt
+try-send
+send
+          START TIMER: starting timer at 29.297682
+          TOLAYER3: seq: 314, ack 257, check: -15735, data: llllllllllllllllllll
+          TOLAYER3: scheduling arrival on other side
+current time:29.297682
+--------------
+Event List Follows:
+Event time: 29.450623, type: 0 entity: 0
+Event time: 29.650627, type: 1 entity: 1
+Event time: 31.640904, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: rrrrrrrrrrrrrrrrrrrr
+A-output.
+send
+          TOLAYER3: seq: 334, ack 257, check: -18325, data: mmmmmmmmmmmmmmmmmmmm
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 2.343222
+current time:29.450623
+--------------
+Event List Follows:
+Event time: 29.650627, type: 1 entity: 1
+Event time: 29.963183, type: 1 entity: 1
+Event time: 30.594313, type: 0 entity: 0
+Event time: 31.640904, type: 2 entity: 0
+--------------
+B_input
+expect:314, get 314
+          TOLAYER3: seq: 237, ack 334, check: -64488, data: LLLLLLLLLLLLLLLLLLLL
+          TOLAYER3: scheduling arrival on other side
+current time:29.650627
+--------------
+Event List Follows:
+Event time: 29.963183, type: 1 entity: 1
+Event time: 30.213667, type: 1 entity: 0
+Event time: 30.594313, type: 0 entity: 0
+Event time: 31.640904, type: 2 entity: 0
+--------------
+B_input
+expect:334, get 334
+          TOLAYER3: seq: 237, ack 354, check: -1523, data: MMMMMMMMMMMMMMMMMMMM
+          TOLAYER3: scheduling arrival on other side
+current time:29.963183
+--------------
+Event List Follows:
+Event time: 30.213667, type: 1 entity: 0
+Event time: 30.594313, type: 0 entity: 0
+Event time: 30.822017, type: 1 entity: 0
+Event time: 31.640904, type: 2 entity: 0
+--------------
+A_input
+          STOP TIMER: stopping timer at 30.213667
+          START TIMER: starting timer at 30.213667
+current time:30.213667
+--------------
+Event List Follows:
+Event time: 30.594313, type: 0 entity: 0
+Event time: 30.822017, type: 1 entity: 0
+Event time: 32.343662, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: ssssssssssssssssssss
+A-output.
+send
+          TOLAYER3: seq: 354, ack 257, check: -20915, data: nnnnnnnnnnnnnnnnnnnn
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 2.129995
+current time:30.594313
+--------------
+Event List Follows:
+Event time: 30.822017, type: 1 entity: 0
+Event time: 30.909560, type: 1 entity: 1
+Event time: 31.475220, type: 0 entity: 0
+Event time: 32.343662, type: 2 entity: 0
+--------------
+A_input
+          STOP TIMER: stopping timer at 30.822017
+          START TIMER: starting timer at 30.822017
+current time:30.822017
+--------------
+Event List Follows:
+Event time: 30.909560, type: 1 entity: 1
+Event time: 31.475220, type: 0 entity: 0
+Event time: 32.874153, type: 2 entity: 0
+--------------
+B_input
+expect:354, get 354
+          TOLAYER3: seq: 237, ack 374, check: -4093, data: NNNNNNNNNNNNNNNNNNNN
+          TOLAYER3: scheduling arrival on other side
+current time:30.909560
+--------------
+Event List Follows:
+Event time: 31.475220, type: 0 entity: 0
+Event time: 31.558169, type: 1 entity: 0
+Event time: 32.874153, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: tttttttttttttttttttt
+A-output.
+send
+          TOLAYER3: seq: 374, ack 257, check: -23505, data: oooooooooooooooooooo
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 2.052136
+current time:31.475220
+--------------
+Event List Follows:
+Event time: 31.558169, type: 1 entity: 0
+Event time: 31.820456, type: 1 entity: 1
+Event time: 32.431616, type: 0 entity: 0
+Event time: 32.874153, type: 2 entity: 0
+--------------
+A_input
+          STOP TIMER: stopping timer at 31.558169
+          START TIMER: starting timer at 31.558169
+current time:31.558169
+--------------
+Event List Follows:
+Event time: 31.820456, type: 1 entity: 1
+Event time: 32.431616, type: 0 entity: 0
+Event time: 33.628857, type: 2 entity: 0
+--------------
+B_input
+expect:374, get 374
+          TOLAYER3: seq: 237, ack 394, check: -6663, data: OOOOOOOOOOOOOOOOOOOO
+          TOLAYER3: scheduling arrival on other side
+current time:31.820456
+--------------
+Event List Follows:
+Event time: 32.130379, type: 1 entity: 0
+Event time: 32.431616, type: 0 entity: 0
+Event time: 33.628857, type: 2 entity: 0
+--------------
+A_input
+          STOP TIMER: stopping timer at 32.130379
+current time:32.130379
+--------------
+Event List Follows:
+Event time: 32.431616, type: 0 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: uuuuuuuuuuuuuuuuuuuu
+A-output.
+send
+          START TIMER: starting timer at 32.431616
+          TOLAYER3: seq: 394, ack 257, check: -26095, data: pppppppppppppppppppp
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.869828
+current time:32.431616
+--------------
+Event List Follows:
+Event time: 32.914942, type: 1 entity: 1
+Event time: 33.790689, type: 0 entity: 0
+Event time: 34.301443, type: 2 entity: 0
+--------------
+B_input
+expect:394, get 394
+          TOLAYER3: packet being lost
+current time:32.914942
+--------------
+Event List Follows:
+Event time: 33.790689, type: 0 entity: 0
+Event time: 34.301443, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: vvvvvvvvvvvvvvvvvvvv
+A-output.
+send
+          TOLAYER3: seq: 414, ack 257, check: -28685, data: qqqqqqqqqqqqqqqqqqqq
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.869828
+current time:33.790689
+--------------
+Event List Follows:
+Event time: 33.805477, type: 0 entity: 0
+Event time: 34.185545, type: 1 entity: 1
+Event time: 34.301443, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: wwwwwwwwwwwwwwwwwwww
+A-output.
+send
+          TOLAYER3: seq: 434, ack 257, check: -31275, data: rrrrrrrrrrrrrrrrrrrr
+          TOLAYER3: packet being corrupted
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.869828
+current time:33.805477
+--------------
+Event List Follows:
+Event time: 34.047651, type: 1 entity: 1
+Event time: 34.185545, type: 1 entity: 1
+Event time: 34.194700, type: 0 entity: 0
+Event time: 34.301443, type: 2 entity: 0
+--------------
+B_input
+expect:414, get 434, seq is not expected, so drop it.
+current time:34.047651
+--------------
+Event List Follows:
+Event time: 34.185545, type: 1 entity: 1
+Event time: 34.194700, type: 0 entity: 0
+Event time: 34.301443, type: 2 entity: 0
+--------------
+B_input
+expect:414, get 414
+          TOLAYER3: seq: 237, ack 434, check: -11803, data: QQQQQQQQQQQQQQQQQQQQ
+          TOLAYER3: packet being corrupted
+          TOLAYER3: scheduling arrival on other side
+current time:34.185545
+--------------
+Event List Follows:
+Event time: 34.194700, type: 0 entity: 0
+Event time: 34.301443, type: 2 entity: 0
+Event time: 34.664629, type: 1 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: xxxxxxxxxxxxxxxxxxxx
+A-output.
+send
+          TOLAYER3: seq: 454, ack 257, check: -33865, data: ssssssssssssssssssss
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.869828
+current time:34.194700
+--------------
+Event List Follows:
+Event time: 34.301443, type: 2 entity: 0
+Event time: 34.421814, type: 0 entity: 0
+Event time: 34.664629, type: 1 entity: 0
+Event time: 34.702160, type: 1 entity: 1
+--------------
+A_timerinterrupt
+try-send
+send
+          START TIMER: starting timer at 34.301443
+          TOLAYER3: seq: 394, ack 257, check: -26095, data: pppppppppppppppppppp
+          TOLAYER3: packet being corrupted
+          TOLAYER3: scheduling arrival on other side
+current time:34.301443
+--------------
+Event List Follows:
+Event time: 34.421814, type: 0 entity: 0
+Event time: 34.664629, type: 1 entity: 0
+Event time: 34.702160, type: 1 entity: 1
+Event time: 34.847831, type: 1 entity: 1
+Event time: 36.171271, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: yyyyyyyyyyyyyyyyyyyy
+A-output.
+send
+          TOLAYER3: seq: 414, ack 257, check: -28685, data: qqqqqqqqqqqqqqqqqqqq
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.869828
+current time:34.421814
+--------------
+Event List Follows:
+Event time: 34.518859, type: 1 entity: 1
+Event time: 34.611098, type: 0 entity: 0
+Event time: 34.664629, type: 1 entity: 0
+Event time: 34.702160, type: 1 entity: 1
+Event time: 34.847831, type: 1 entity: 1
+Event time: 36.171271, type: 2 entity: 0
+--------------
+B_input
+expect:434, get 414, seq is not expected, so drop it.
+current time:34.518859
+--------------
+Event List Follows:
+Event time: 34.611098, type: 0 entity: 0
+Event time: 34.664629, type: 1 entity: 0
+Event time: 34.702160, type: 1 entity: 1
+Event time: 34.847831, type: 1 entity: 1
+Event time: 36.171271, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: zzzzzzzzzzzzzzzzzzzz
+A-output.
+send
+          TOLAYER3: seq: 434, ack 257, check: -31275, data: rrrrrrrrrrrrrrrrrrrr
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.869828
+current time:34.611098
+--------------
+Event List Follows:
+Event time: 34.664629, type: 1 entity: 0
+Event time: 34.702160, type: 1 entity: 1
+Event time: 34.787443, type: 0 entity: 0
+Event time: 34.847831, type: 1 entity: 1
+Event time: 35.131915, type: 1 entity: 1
+Event time: 36.171271, type: 2 entity: 0
+--------------
+A_input
+error:check sum=2303
+          STOP TIMER: stopping timer at 34.664629
+          START TIMER: starting timer at 34.664629
+current time:34.664629
+--------------
+Event List Follows:
+Event time: 34.702160, type: 1 entity: 1
+Event time: 34.787443, type: 0 entity: 0
+Event time: 34.847831, type: 1 entity: 1
+Event time: 35.131915, type: 1 entity: 1
+Event time: 36.585064, type: 2 entity: 0
+--------------
+B_input
+expect:434, get 454, seq is not expected, so drop it.
+current time:34.702160
+--------------
+Event List Follows:
+Event time: 34.787443, type: 0 entity: 0
+Event time: 34.847831, type: 1 entity: 1
+Event time: 35.131915, type: 1 entity: 1
+Event time: 36.585064, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: aaaaaaaaaaaaaaaaaaaa
+A-output.
+send
+          TOLAYER3: seq: 454, ack 257, check: -33865, data: ssssssssssssssssssss
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.920435
+current time:34.787443
+--------------
+Event List Follows:
+Event time: 34.803952, type: 0 entity: 0
+Event time: 34.847831, type: 1 entity: 1
+Event time: 35.041409, type: 1 entity: 1
+Event time: 35.131915, type: 1 entity: 1
+Event time: 36.585064, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: bbbbbbbbbbbbbbbbbbbb
+A-output.
+send
+          TOLAYER3: seq: 474, ack 257, check: -36455, data: tttttttttttttttttttt
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.920435
+current time:34.803952
+--------------
+Event List Follows:
+Event time: 34.847831, type: 1 entity: 1
+Event time: 34.903458, type: 0 entity: 0
+Event time: 35.041409, type: 1 entity: 1
+Event time: 35.131915, type: 1 entity: 1
+Event time: 35.354111, type: 1 entity: 1
+Event time: 36.585064, type: 2 entity: 0
+--------------
+B_input
+expect:434, get 394, seq is not expected, so drop it.
+current time:34.847831
+--------------
+Event List Follows:
+Event time: 34.903458, type: 0 entity: 0
+Event time: 35.041409, type: 1 entity: 1
+Event time: 35.131915, type: 1 entity: 1
+Event time: 35.354111, type: 1 entity: 1
+Event time: 36.585064, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: cccccccccccccccccccc
+A-output.
+send
+          TOLAYER3: seq: 494, ack 257, check: -39045, data: uuuuuuuuuuuuuuuuuuuu
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.920435
+current time:34.903458
+--------------
+Event List Follows:
+Event time: 35.041409, type: 1 entity: 1
+Event time: 35.131915, type: 1 entity: 1
+Event time: 35.270691, type: 1 entity: 1
+Event time: 35.354111, type: 1 entity: 1
+Event time: 35.660494, type: 0 entity: 0
+Event time: 36.585064, type: 2 entity: 0
+--------------
+B_input
+expect:434, get 454, seq is not expected, so drop it.
+current time:35.041409
+--------------
+Event List Follows:
+Event time: 35.131915, type: 1 entity: 1
+Event time: 35.270691, type: 1 entity: 1
+Event time: 35.354111, type: 1 entity: 1
+Event time: 35.660494, type: 0 entity: 0
+Event time: 36.585064, type: 2 entity: 0
+--------------
+B_input
+expect:434, get 434
+          TOLAYER3: packet being lost
+current time:35.131915
+--------------
+Event List Follows:
+Event time: 35.270691, type: 1 entity: 1
+Event time: 35.354111, type: 1 entity: 1
+Event time: 35.660494, type: 0 entity: 0
+Event time: 36.585064, type: 2 entity: 0
+--------------
+B_input
+expect:454, get 494, seq is not expected, so drop it.
+current time:35.270691
+--------------
+Event List Follows:
+Event time: 35.354111, type: 1 entity: 1
+Event time: 35.660494, type: 0 entity: 0
+Event time: 36.585064, type: 2 entity: 0
+--------------
+B_input
+expect:454, get 474, seq is not expected, so drop it.
+current time:35.354111
+--------------
+Event List Follows:
+Event time: 35.660494, type: 0 entity: 0
+Event time: 36.585064, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: dddddddddddddddddddd
+A-output.
+send
+          TOLAYER3: seq: 514, ack 257, check: -41635, data: vvvvvvvvvvvvvvvvvvvv
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.920435
+current time:35.660494
+--------------
+Event List Follows:
+Event time: 36.578947, type: 1 entity: 1
+Event time: 36.585064, type: 2 entity: 0
+Event time: 36.935865, type: 0 entity: 0
+--------------
+B_input
+expect:454, get 514, seq is not expected, so drop it.
+current time:36.578947
+--------------
+Event List Follows:
+Event time: 36.585064, type: 2 entity: 0
+Event time: 36.935865, type: 0 entity: 0
+--------------
+A_timerinterrupt
+try-send
+send
+          START TIMER: starting timer at 36.585064
+          TOLAYER3: seq: 434, ack 257, check: -31275, data: rrrrrrrrrrrrrrrrrrrr
+          TOLAYER3: scheduling arrival on other side
+current time:36.585064
+--------------
+Event List Follows:
+Event time: 36.935865, type: 0 entity: 0
+Event time: 37.213682, type: 1 entity: 1
+Event time: 38.505498, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: eeeeeeeeeeeeeeeeeeee
+A-output.
+send
+          TOLAYER3: seq: 454, ack 257, check: -33865, data: ssssssssssssssssssss
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.920435
+current time:36.935865
+--------------
+Event List Follows:
+Event time: 37.166399, type: 1 entity: 1
+Event time: 37.213682, type: 1 entity: 1
+Event time: 37.631328, type: 0 entity: 0
+Event time: 38.505498, type: 2 entity: 0
+--------------
+B_input
+expect:454, get 454
+          TOLAYER3: seq: 237, ack 474, check: -16943, data: SSSSSSSSSSSSSSSSSSSS
+          TOLAYER3: scheduling arrival on other side
+current time:37.166399
+--------------
+Event List Follows:
+Event time: 37.213682, type: 1 entity: 1
+Event time: 37.631328, type: 0 entity: 0
+Event time: 37.867062, type: 1 entity: 0
+Event time: 38.505498, type: 2 entity: 0
+--------------
+B_input
+expect:474, get 434, seq is not expected, so drop it.
+current time:37.213682
+--------------
+Event List Follows:
+Event time: 37.631328, type: 0 entity: 0
+Event time: 37.867062, type: 1 entity: 0
+Event time: 38.505498, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: ffffffffffffffffffff
+A-output.
+send
+          TOLAYER3: packet being lost
+timeout_interval = 1.920435
+current time:37.631328
+--------------
+Event List Follows:
+Event time: 37.867062, type: 1 entity: 0
+Event time: 38.326139, type: 0 entity: 0
+Event time: 38.505498, type: 2 entity: 0
+--------------
+A_input
+          STOP TIMER: stopping timer at 37.867062
+          START TIMER: starting timer at 37.867062
+current time:37.867062
+--------------
+Event List Follows:
+Event time: 38.326139, type: 0 entity: 0
+Event time: 39.602939, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: gggggggggggggggggggg
+A-output.
+send
+          TOLAYER3: packet being lost
+timeout_interval = 1.735878
+current time:38.326139
+--------------
+Event List Follows:
+Event time: 38.822576, type: 0 entity: 0
+Event time: 39.602939, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: hhhhhhhhhhhhhhhhhhhh
+A-output.
+send
+          TOLAYER3: seq: 514, ack 257, check: -41635, data: vvvvvvvvvvvvvvvvvvvv
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.735878
+current time:38.822576
+--------------
+Event List Follows:
+Event time: 39.293406, type: 0 entity: 0
+Event time: 39.602939, type: 2 entity: 0
+Event time: 39.699624, type: 1 entity: 1
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: iiiiiiiiiiiiiiiiiiii
+A-output.
+send
+          TOLAYER3: seq: 534, ack 257, check: -44225, data: wwwwwwwwwwwwwwwwwwww
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.735878
+current time:39.293406
+--------------
+Event List Follows:
+Event time: 39.602939, type: 2 entity: 0
+Event time: 39.699624, type: 1 entity: 1
+Event time: 40.052463, type: 1 entity: 1
+Event time: 40.167894, type: 0 entity: 0
+--------------
+A_timerinterrupt
+try-send
+send
+          START TIMER: starting timer at 39.602939
+          TOLAYER3: seq: 474, ack 257, check: -36455, data: tttttttttttttttttttt
+          TOLAYER3: scheduling arrival on other side
+current time:39.602939
+--------------
+Event List Follows:
+Event time: 39.676651, type: 1 entity: 1
+Event time: 39.699624, type: 1 entity: 1
+Event time: 40.052463, type: 1 entity: 1
+Event time: 40.167894, type: 0 entity: 0
+Event time: 41.338817, type: 2 entity: 0
+--------------
+B_input
+expect:474, get 474
+          TOLAYER3: seq: 237, ack 494, check: -19513, data: TTTTTTTTTTTTTTTTTTTT
+          TOLAYER3: scheduling arrival on other side
+current time:39.676651
+--------------
+Event List Follows:
+Event time: 39.699624, type: 1 entity: 1
+Event time: 40.052463, type: 1 entity: 1
+Event time: 40.167894, type: 0 entity: 0
+Event time: 40.536625, type: 1 entity: 0
+Event time: 41.338817, type: 2 entity: 0
+--------------
+B_input
+expect:494, get 514, seq is not expected, so drop it.
+current time:39.699624
+--------------
+Event List Follows:
+Event time: 40.052463, type: 1 entity: 1
+Event time: 40.167894, type: 0 entity: 0
+Event time: 40.536625, type: 1 entity: 0
+Event time: 41.338817, type: 2 entity: 0
+--------------
+B_input
+expect:494, get 534, seq is not expected, so drop it.
+current time:40.052463
+--------------
+Event List Follows:
+Event time: 40.167894, type: 0 entity: 0
+Event time: 40.536625, type: 1 entity: 0
+Event time: 41.338817, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: jjjjjjjjjjjjjjjjjjjj
+A-output.
+send
+          TOLAYER3: seq: 494, ack 257, check: -39045, data: uuuuuuuuuuuuuuuuuuuu
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.735878
+current time:40.167894
+--------------
+Event List Follows:
+Event time: 40.536625, type: 1 entity: 0
+Event time: 41.151069, type: 1 entity: 1
+Event time: 41.221590, type: 0 entity: 0
+Event time: 41.338817, type: 2 entity: 0
+--------------
+A_input
+          STOP TIMER: stopping timer at 40.536625
+          START TIMER: starting timer at 40.536625
+current time:40.536625
+--------------
+Event List Follows:
+Event time: 41.151069, type: 1 entity: 1
+Event time: 41.221590, type: 0 entity: 0
+Event time: 41.988134, type: 2 entity: 0
+--------------
+B_input
+expect:494, get 494
+          TOLAYER3: seq: 237, ack 514, check: -22083, data: UUUUUUUUUUUUUUUUUUUU
+          TOLAYER3: scheduling arrival on other side
+current time:41.151069
+--------------
+Event List Follows:
+Event time: 41.221590, type: 0 entity: 0
+Event time: 41.741680, type: 1 entity: 0
+Event time: 41.988134, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: kkkkkkkkkkkkkkkkkkkk
+A-output.
+send
+          TOLAYER3: seq: 514, ack 257, check: -41635, data: vvvvvvvvvvvvvvvvvvvv
+          TOLAYER3: packet being corrupted
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.451509
+current time:41.221590
+--------------
+Event List Follows:
+Event time: 41.741680, type: 1 entity: 0
+Event time: 41.988134, type: 2 entity: 0
+Event time: 42.051590, type: 1 entity: 1
+Event time: 42.232102, type: 0 entity: 0
+--------------
+A_input
+          STOP TIMER: stopping timer at 41.741680
+          START TIMER: starting timer at 41.741680
+current time:41.741680
+--------------
+Event List Follows:
+Event time: 42.051590, type: 1 entity: 1
+Event time: 42.232102, type: 0 entity: 0
+Event time: 43.053696, type: 2 entity: 0
+--------------
+B_input
+check_sum is not correct, so drop it
+current time:42.051590
+--------------
+Event List Follows:
+Event time: 42.232102, type: 0 entity: 0
+Event time: 43.053696, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: llllllllllllllllllll
+A-output.
+send
+          TOLAYER3: seq: 534, ack 257, check: -44225, data: wwwwwwwwwwwwwwwwwwww
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.312017
+current time:42.232102
+--------------
+Event List Follows:
+Event time: 42.413412, type: 1 entity: 1
+Event time: 43.011449, type: 0 entity: 0
+Event time: 43.053696, type: 2 entity: 0
+--------------
+B_input
+expect:514, get 534, seq is not expected, so drop it.
+current time:42.413412
+--------------
+Event List Follows:
+Event time: 43.011449, type: 0 entity: 0
+Event time: 43.053696, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: mmmmmmmmmmmmmmmmmmmm
+A-output.
+send
+          TOLAYER3: seq: 554, ack 257, check: -46815, data: xxxxxxxxxxxxxxxxxxxx
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.312017
+current time:43.011449
+--------------
+Event List Follows:
+Event time: 43.053696, type: 2 entity: 0
+Event time: 43.212584, type: 1 entity: 1
+Event time: 43.687649, type: 0 entity: 0
+--------------
+A_timerinterrupt
+try-send
+send
+          START TIMER: starting timer at 43.053696
+          TOLAYER3: seq: 514, ack 257, check: -41635, data: vvvvvvvvvvvvvvvvvvvv
+          TOLAYER3: scheduling arrival on other side
+current time:43.053696
+--------------
+Event List Follows:
+Event time: 43.212584, type: 1 entity: 1
+Event time: 43.687649, type: 0 entity: 0
+Event time: 43.689811, type: 1 entity: 1
+Event time: 44.365713, type: 2 entity: 0
+--------------
+B_input
+expect:514, get 554, seq is not expected, so drop it.
+current time:43.212584
+--------------
+Event List Follows:
+Event time: 43.687649, type: 0 entity: 0
+Event time: 43.689811, type: 1 entity: 1
+Event time: 44.365713, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: nnnnnnnnnnnnnnnnnnnn
+A-output.
+send
+          TOLAYER3: seq: 534, ack 257, check: -44225, data: wwwwwwwwwwwwwwwwwwww
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.312017
+current time:43.687649
+--------------
+Event List Follows:
+Event time: 43.689811, type: 1 entity: 1
+Event time: 44.097100, type: 0 entity: 0
+Event time: 44.365713, type: 2 entity: 0
+Event time: 44.594667, type: 1 entity: 1
+--------------
+B_input
+expect:514, get 514
+          TOLAYER3: seq: 237, ack 534, check: -24653, data: VVVVVVVVVVVVVVVVVVVV
+          TOLAYER3: scheduling arrival on other side
+current time:43.689811
+--------------
+Event List Follows:
+Event time: 44.097100, type: 0 entity: 0
+Event time: 44.365713, type: 2 entity: 0
+Event time: 44.594667, type: 1 entity: 1
+Event time: 44.684784, type: 1 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: oooooooooooooooooooo
+A-output.
+send
+          TOLAYER3: seq: 554, ack 257, check: -46815, data: xxxxxxxxxxxxxxxxxxxx
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.312017
+current time:44.097100
+--------------
+Event List Follows:
+Event time: 44.206424, type: 1 entity: 1
+Event time: 44.365713, type: 2 entity: 0
+Event time: 44.594667, type: 1 entity: 1
+Event time: 44.639709, type: 0 entity: 0
+Event time: 44.684784, type: 1 entity: 0
+--------------
+B_input
+expect:534, get 554, seq is not expected, so drop it.
+current time:44.206424
+--------------
+Event List Follows:
+Event time: 44.365713, type: 2 entity: 0
+Event time: 44.594667, type: 1 entity: 1
+Event time: 44.639709, type: 0 entity: 0
+Event time: 44.684784, type: 1 entity: 0
+--------------
+A_timerinterrupt
+try-send
+send
+          START TIMER: starting timer at 44.365713
+          TOLAYER3: packet being lost
+current time:44.365713
+--------------
+Event List Follows:
+Event time: 44.594667, type: 1 entity: 1
+Event time: 44.639709, type: 0 entity: 0
+Event time: 44.684784, type: 1 entity: 0
+Event time: 45.677729, type: 2 entity: 0
+--------------
+B_input
+expect:534, get 534
+          TOLAYER3: packet being lost
+current time:44.594667
+--------------
+Event List Follows:
+Event time: 44.639709, type: 0 entity: 0
+Event time: 44.684784, type: 1 entity: 0
+Event time: 45.677729, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: pppppppppppppppppppp
+A-output.
+send
+          TOLAYER3: seq: 534, ack 257, check: -44225, data: wwwwwwwwwwwwwwwwwwww
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.312017
+current time:44.639709
+--------------
+Event List Follows:
+Event time: 44.684784, type: 1 entity: 0
+Event time: 45.203200, type: 1 entity: 1
+Event time: 45.677729, type: 2 entity: 0
+Event time: 45.924177, type: 0 entity: 0
+--------------
+A_input
+          STOP TIMER: stopping timer at 44.684784
+          START TIMER: starting timer at 44.684784
+current time:44.684784
+--------------
+Event List Follows:
+Event time: 45.203200, type: 1 entity: 1
+Event time: 45.924177, type: 0 entity: 0
+Event time: 46.109424, type: 2 entity: 0
+--------------
+B_input
+expect:554, get 534, seq is not expected, so drop it.
+current time:45.203200
+--------------
+Event List Follows:
+Event time: 45.924177, type: 0 entity: 0
+Event time: 46.109424, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: qqqqqqqqqqqqqqqqqqqq
+A-output.
+send
+          TOLAYER3: packet being lost
+timeout_interval = 1.424640
+current time:45.924177
+--------------
+Event List Follows:
+Event time: 46.109424, type: 2 entity: 0
+Event time: 46.318781, type: 0 entity: 0
+--------------
+A_timerinterrupt
+try-send
+send
+          START TIMER: starting timer at 46.109424
+          TOLAYER3: seq: 534, ack 257, check: -44225, data: wwwwwwwwwwwwwwwwwwww
+          TOLAYER3: scheduling arrival on other side
+current time:46.109424
+--------------
+Event List Follows:
+Event time: 46.318781, type: 0 entity: 0
+Event time: 46.357051, type: 1 entity: 1
+Event time: 47.534064, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: rrrrrrrrrrrrrrrrrrrr
+A-output.
+send
+          TOLAYER3: seq: 554, ack 257, check: -46815, data: xxxxxxxxxxxxxxxxxxxx
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.424640
+current time:46.318781
+--------------
+Event List Follows:
+Event time: 46.353577, type: 0 entity: 0
+Event time: 46.357051, type: 1 entity: 1
+Event time: 47.007868, type: 1 entity: 1
+Event time: 47.534064, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: ssssssssssssssssssss
+A-output.
+send
+          TOLAYER3: packet being lost
+timeout_interval = 1.424640
+current time:46.353577
+--------------
+Event List Follows:
+Event time: 46.357051, type: 1 entity: 1
+Event time: 47.007868, type: 1 entity: 1
+Event time: 47.301518, type: 0 entity: 0
+Event time: 47.534064, type: 2 entity: 0
+--------------
+B_input
+expect:554, get 534, seq is not expected, so drop it.
+current time:46.357051
+--------------
+Event List Follows:
+Event time: 47.007868, type: 1 entity: 1
+Event time: 47.301518, type: 0 entity: 0
+Event time: 47.534064, type: 2 entity: 0
+--------------
+B_input
+expect:554, get 554
+          TOLAYER3: seq: 237, ack 574, check: -29793, data: XXXXXXXXXXXXXXXXXXXX
+          TOLAYER3: scheduling arrival on other side
+current time:47.007868
+--------------
+Event List Follows:
+Event time: 47.301518, type: 0 entity: 0
+Event time: 47.513876, type: 1 entity: 0
+Event time: 47.534064, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: tttttttttttttttttttt
+A-output.
+send
+          TOLAYER3: packet being lost
+timeout_interval = 1.424640
+current time:47.301518
+--------------
+Event List Follows:
+Event time: 47.513876, type: 1 entity: 0
+Event time: 47.534064, type: 2 entity: 0
+Event time: 47.554995, type: 0 entity: 0
+--------------
+A_input
+          STOP TIMER: stopping timer at 47.513876
+          START TIMER: starting timer at 47.513876
+current time:47.513876
+--------------
+Event List Follows:
+Event time: 47.554995, type: 0 entity: 0
+Event time: 48.822941, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: uuuuuuuuuuuuuuuuuuuu
+A-output.
+send
+          TOLAYER3: seq: 614, ack 257, check: -53300, data: aaaaaaaaaaaaaaaaaaaa
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.309065
+current time:47.554995
+--------------
+Event List Follows:
+Event time: 47.644798, type: 0 entity: 0
+Event time: 47.728464, type: 1 entity: 1
+Event time: 48.822941, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: vvvvvvvvvvvvvvvvvvvv
+A-output.
+send
+          TOLAYER3: seq: 634, ack 257, check: -55890, data: bbbbbbbbbbbbbbbbbbbb
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.309065
+current time:47.644798
+--------------
+Event List Follows:
+Event time: 47.728464, type: 1 entity: 1
+Event time: 48.035064, type: 1 entity: 1
+Event time: 48.563542, type: 0 entity: 0
+Event time: 48.822941, type: 2 entity: 0
+--------------
+B_input
+expect:574, get 614, seq is not expected, so drop it.
+current time:47.728464
+--------------
+Event List Follows:
+Event time: 48.035064, type: 1 entity: 1
+Event time: 48.563542, type: 0 entity: 0
+Event time: 48.822941, type: 2 entity: 0
+--------------
+B_input
+expect:574, get 634, seq is not expected, so drop it.
+current time:48.035064
+--------------
+Event List Follows:
+Event time: 48.563542, type: 0 entity: 0
+Event time: 48.822941, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: wwwwwwwwwwwwwwwwwwww
+A-output.
+send
+          TOLAYER3: seq: 654, ack 257, check: -58480, data: cccccccccccccccccccc
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.309065
+current time:48.563542
+--------------
+Event List Follows:
+Event time: 48.822941, type: 2 entity: 0
+Event time: 48.925151, type: 1 entity: 1
+Event time: 49.004707, type: 0 entity: 0
+--------------
+A_timerinterrupt
+try-send
+send
+          START TIMER: starting timer at 48.822941
+          TOLAYER3: seq: 574, ack 257, check: -49405, data: yyyyyyyyyyyyyyyyyyyy
+          TOLAYER3: scheduling arrival on other side
+current time:48.822941
+--------------
+Event List Follows:
+Event time: 48.925151, type: 1 entity: 1
+Event time: 49.004707, type: 0 entity: 0
+Event time: 49.220169, type: 1 entity: 1
+Event time: 50.132006, type: 2 entity: 0
+--------------
+B_input
+expect:574, get 654, seq is not expected, so drop it.
+current time:48.925151
+--------------
+Event List Follows:
+Event time: 49.004707, type: 0 entity: 0
+Event time: 49.220169, type: 1 entity: 1
+Event time: 50.132006, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: xxxxxxxxxxxxxxxxxxxx
+A-output.
+send
+          TOLAYER3: seq: 594, ack 257, check: -51995, data: zzzzzzzzzzzzzzzzzzzz
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.309065
+current time:49.004707
+--------------
+Event List Follows:
+Event time: 49.220169, type: 1 entity: 1
+Event time: 49.266643, type: 1 entity: 1
+Event time: 49.409802, type: 0 entity: 0
+Event time: 50.132006, type: 2 entity: 0
+--------------
+B_input
+expect:574, get 574
+          TOLAYER3: packet being lost
+current time:49.220169
+--------------
+Event List Follows:
+Event time: 49.266643, type: 1 entity: 1
+Event time: 49.409802, type: 0 entity: 0
+Event time: 50.132006, type: 2 entity: 0
+--------------
+B_input
+expect:594, get 594
+          TOLAYER3: packet being lost
+current time:49.266643
+--------------
+Event List Follows:
+Event time: 49.409802, type: 0 entity: 0
+Event time: 50.132006, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: yyyyyyyyyyyyyyyyyyyy
+A-output.
+send
+          TOLAYER3: seq: 614, ack 257, check: -53300, data: aaaaaaaaaaaaaaaaaaaa
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.309065
+current time:49.409802
+--------------
+Event List Follows:
+Event time: 49.595241, type: 0 entity: 0
+Event time: 49.723314, type: 1 entity: 1
+Event time: 50.132006, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: zzzzzzzzzzzzzzzzzzzz
+A-output.
+send
+          TOLAYER3: seq: 634, ack 257, check: -55890, data: bbbbbbbbbbbbbbbbbbbb
+          TOLAYER3: packet being corrupted
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.309065
+current time:49.595241
+--------------
+Event List Follows:
+Event time: 49.650959, type: 1 entity: 1
+Event time: 49.723314, type: 1 entity: 1
+Event time: 50.132006, type: 2 entity: 0
+Event time: 50.830390, type: 0 entity: 0
+--------------
+B_input
+expect:614, get 634, seq is not expected, so drop it.
+current time:49.650959
+--------------
+Event List Follows:
+Event time: 49.723314, type: 1 entity: 1
+Event time: 50.132006, type: 2 entity: 0
+Event time: 50.830390, type: 0 entity: 0
+--------------
+B_input
+expect:614, get 614
+          TOLAYER3: seq: 237, ack 634, check: -36218, data: AAAAAAAAAAAAAAAAAAAA
+          TOLAYER3: scheduling arrival on other side
+current time:49.723314
+--------------
+Event List Follows:
+Event time: 50.047881, type: 1 entity: 0
+Event time: 50.132006, type: 2 entity: 0
+Event time: 50.830390, type: 0 entity: 0
+--------------
+A_input
+          STOP TIMER: stopping timer at 50.047881
+          START TIMER: starting timer at 50.047881
+current time:50.047881
+--------------
+Event List Follows:
+Event time: 50.830390, type: 0 entity: 0
+Event time: 51.225485, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: aaaaaaaaaaaaaaaaaaaa
+A-output.
+send
+          TOLAYER3: seq: 654, ack 257, check: -58480, data: cccccccccccccccccccc
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.177604
+current time:50.830390
+--------------
+Event List Follows:
+Event time: 51.054318, type: 0 entity: 0
+Event time: 51.225485, type: 2 entity: 0
+Event time: 51.351948, type: 1 entity: 1
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: bbbbbbbbbbbbbbbbbbbb
+A-output.
+send
+          TOLAYER3: packet being lost
+timeout_interval = 1.177604
+current time:51.054318
+--------------
+Event List Follows:
+Event time: 51.225485, type: 2 entity: 0
+Event time: 51.351948, type: 1 entity: 1
+Event time: 52.323782, type: 0 entity: 0
+--------------
+A_timerinterrupt
+try-send
+send
+          START TIMER: starting timer at 51.225485
+          TOLAYER3: packet being lost
+current time:51.225485
+--------------
+Event List Follows:
+Event time: 51.351948, type: 1 entity: 1
+Event time: 52.323782, type: 0 entity: 0
+Event time: 52.403089, type: 2 entity: 0
+--------------
+B_input
+expect:634, get 654, seq is not expected, so drop it.
+current time:51.351948
+--------------
+Event List Follows:
+Event time: 52.323782, type: 0 entity: 0
+Event time: 52.403089, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: cccccccccccccccccccc
+A-output.
+send
+          TOLAYER3: seq: 654, ack 257, check: -58480, data: cccccccccccccccccccc
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.177604
+current time:52.323782
+--------------
+Event List Follows:
+Event time: 52.403089, type: 2 entity: 0
+Event time: 52.652710, type: 1 entity: 1
+Event time: 52.706402, type: 0 entity: 0
+--------------
+A_timerinterrupt
+try-send
+send
+          START TIMER: starting timer at 52.403089
+          TOLAYER3: seq: 634, ack 257, check: -55890, data: bbbbbbbbbbbbbbbbbbbb
+          TOLAYER3: scheduling arrival on other side
+current time:52.403089
+--------------
+Event List Follows:
+Event time: 52.652710, type: 1 entity: 1
+Event time: 52.706402, type: 0 entity: 0
+Event time: 53.226711, type: 1 entity: 1
+Event time: 53.580692, type: 2 entity: 0
+--------------
+B_input
+expect:634, get 654, seq is not expected, so drop it.
+current time:52.652710
+--------------
+Event List Follows:
+Event time: 52.706402, type: 0 entity: 0
+Event time: 53.226711, type: 1 entity: 1
+Event time: 53.580692, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: dddddddddddddddddddd
+A-output.
+send
+          TOLAYER3: seq: 654, ack 257, check: -58480, data: cccccccccccccccccccc
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.177604
+current time:52.706402
+--------------
+Event List Follows:
+Event time: 52.927760, type: 0 entity: 0
+Event time: 53.226711, type: 1 entity: 1
+Event time: 53.580692, type: 2 entity: 0
+Event time: 53.663669, type: 1 entity: 1
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: eeeeeeeeeeeeeeeeeeee
+A-output.
+send
+          TOLAYER3: seq: 674, ack 257, check: -61070, data: dddddddddddddddddddd
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.177604
+current time:52.927760
+--------------
+Event List Follows:
+Event time: 53.080866, type: 0 entity: 0
+Event time: 53.130327, type: 1 entity: 1
+Event time: 53.226711, type: 1 entity: 1
+Event time: 53.580692, type: 2 entity: 0
+Event time: 53.663669, type: 1 entity: 1
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: ffffffffffffffffffff
+A-output.
+send
+          TOLAYER3: packet being lost
+timeout_interval = 1.177604
+current time:53.080866
+--------------
+Event List Follows:
+Event time: 53.130327, type: 1 entity: 1
+Event time: 53.226711, type: 1 entity: 1
+Event time: 53.580692, type: 2 entity: 0
+Event time: 53.663669, type: 1 entity: 1
+Event time: 54.447627, type: 0 entity: 0
+--------------
+B_input
+expect:634, get 674, seq is not expected, so drop it.
+current time:53.130327
+--------------
+Event List Follows:
+Event time: 53.226711, type: 1 entity: 1
+Event time: 53.580692, type: 2 entity: 0
+Event time: 53.663669, type: 1 entity: 1
+Event time: 54.447627, type: 0 entity: 0
+--------------
+B_input
+expect:634, get 634
+          TOLAYER3: seq: 237, ack 654, check: -38788, data: BBBBBBBBBBBBBBBBBBBB
+          TOLAYER3: scheduling arrival on other side
+current time:53.226711
+--------------
+Event List Follows:
+Event time: 53.434057, type: 1 entity: 0
+Event time: 53.580692, type: 2 entity: 0
+Event time: 53.663669, type: 1 entity: 1
+Event time: 54.447627, type: 0 entity: 0
+--------------
+A_input
+          STOP TIMER: stopping timer at 53.434057
+          START TIMER: starting timer at 53.434057
+current time:53.434057
+--------------
+Event List Follows:
+Event time: 53.663669, type: 1 entity: 1
+Event time: 54.424462, type: 2 entity: 0
+Event time: 54.447627, type: 0 entity: 0
+--------------
+B_input
+expect:654, get 654
+          TOLAYER3: seq: 237, ack 674, check: -41358, data: CCCCCCCCCCCCCCCCCCCC
+          TOLAYER3: scheduling arrival on other side
+current time:53.663669
+--------------
+Event List Follows:
+Event time: 54.424462, type: 2 entity: 0
+Event time: 54.447627, type: 0 entity: 0
+Event time: 54.579485, type: 1 entity: 0
+--------------
+A_timerinterrupt
+try-send
+send
+          START TIMER: starting timer at 54.424462
+          TOLAYER3: seq: 654, ack 257, check: -58480, data: cccccccccccccccccccc
+          TOLAYER3: scheduling arrival on other side
+current time:54.424462
+--------------
+Event List Follows:
+Event time: 54.447627, type: 0 entity: 0
+Event time: 54.579485, type: 1 entity: 0
+Event time: 54.985741, type: 1 entity: 1
+Event time: 55.414867, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: gggggggggggggggggggg
+A-output.
+send
+          TOLAYER3: seq: 674, ack 257, check: -61070, data: dddddddddddddddddddd
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 0.990405
+current time:54.447627
+--------------
+Event List Follows:
+Event time: 54.579485, type: 1 entity: 0
+Event time: 54.985741, type: 1 entity: 1
+Event time: 55.235082, type: 0 entity: 0
+Event time: 55.414433, type: 1 entity: 1
+Event time: 55.414867, type: 2 entity: 0
+--------------
+A_input
+          STOP TIMER: stopping timer at 54.579485
+          START TIMER: starting timer at 54.579485
+current time:54.579485
+--------------
+Event List Follows:
+Event time: 54.985741, type: 1 entity: 1
+Event time: 55.235082, type: 0 entity: 0
+Event time: 55.414433, type: 1 entity: 1
+Event time: 55.620793, type: 2 entity: 0
+--------------
+B_input
+expect:674, get 654, seq is not expected, so drop it.
+current time:54.985741
+--------------
+Event List Follows:
+Event time: 55.235082, type: 0 entity: 0
+Event time: 55.414433, type: 1 entity: 1
+Event time: 55.620793, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: hhhhhhhhhhhhhhhhhhhh
+A-output.
+send
+          TOLAYER3: seq: 694, ack 257, check: -63660, data: eeeeeeeeeeeeeeeeeeee
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.041308
+current time:55.235082
+--------------
+Event List Follows:
+Event time: 55.414433, type: 1 entity: 1
+Event time: 55.620793, type: 2 entity: 0
+Event time: 55.662363, type: 1 entity: 1
+Event time: 56.334859, type: 0 entity: 0
+--------------
+B_input
+expect:674, get 674
+          TOLAYER3: seq: 237, ack 694, check: -43928, data: DDDDDDDDDDDDDDDDDDDD
+          TOLAYER3: scheduling arrival on other side
+current time:55.414433
+--------------
+Event List Follows:
+Event time: 55.620793, type: 2 entity: 0
+Event time: 55.662363, type: 1 entity: 1
+Event time: 55.877701, type: 1 entity: 0
+Event time: 56.334859, type: 0 entity: 0
+--------------
+A_timerinterrupt
+try-send
+send
+          START TIMER: starting timer at 55.620793
+          TOLAYER3: seq: 674, ack 257, check: -61070, data: dddddddddddddddddddd
+          TOLAYER3: scheduling arrival on other side
+current time:55.620793
+--------------
+Event List Follows:
+Event time: 55.662363, type: 1 entity: 1
+Event time: 55.877701, type: 1 entity: 0
+Event time: 56.334859, type: 0 entity: 0
+Event time: 56.521842, type: 1 entity: 1
+Event time: 56.662101, type: 2 entity: 0
+--------------
+B_input
+expect:694, get 694
+          TOLAYER3: seq: 237, ack 714, check: -46498, data: EEEEEEEEEEEEEEEEEEEE
+          TOLAYER3: scheduling arrival on other side
+current time:55.662363
+--------------
+Event List Follows:
+Event time: 55.877701, type: 1 entity: 0
+Event time: 55.985717, type: 1 entity: 0
+Event time: 56.334859, type: 0 entity: 0
+Event time: 56.521842, type: 1 entity: 1
+Event time: 56.662101, type: 2 entity: 0
+--------------
+A_input
+          STOP TIMER: stopping timer at 55.877701
+current time:55.877701
+--------------
+Event List Follows:
+Event time: 55.985717, type: 1 entity: 0
+Event time: 56.334859, type: 0 entity: 0
+Event time: 56.521842, type: 1 entity: 1
+--------------
+A_input
+          STOP TIMER: stopping timer at 55.985717
+          START TIMER: starting timer at 55.985717
+current time:55.985717
+--------------
+Event List Follows:
+Event time: 56.334859, type: 0 entity: 0
+Event time: 56.521842, type: 1 entity: 1
+Event time: 56.811734, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: iiiiiiiiiiiiiiiiiiii
+A-output.
+send
+          TOLAYER3: seq: 694, ack 257, check: -63660, data: eeeeeeeeeeeeeeeeeeee
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 0.826017
+current time:56.334859
+--------------
+Event List Follows:
+Event time: 56.521842, type: 1 entity: 1
+Event time: 56.770271, type: 1 entity: 1
+Event time: 56.811734, type: 2 entity: 0
+Event time: 57.062292, type: 0 entity: 0
+--------------
+B_input
+expect:714, get 674, seq is not expected, so drop it.
+current time:56.521842
+--------------
+Event List Follows:
+Event time: 56.770271, type: 1 entity: 1
+Event time: 56.811734, type: 2 entity: 0
+Event time: 57.062292, type: 0 entity: 0
+--------------
+B_input
+expect:714, get 694, seq is not expected, so drop it.
+current time:56.770271
+--------------
+Event List Follows:
+Event time: 56.811734, type: 2 entity: 0
+Event time: 57.062292, type: 0 entity: 0
+--------------
+A_timerinterrupt
+try-send
+send
+          START TIMER: starting timer at 56.811734
+          TOLAYER3: seq: 714, ack 257, check: -715, data: ffffffffffffffffffff
+          TOLAYER3: scheduling arrival on other side
+current time:56.811734
+--------------
+Event List Follows:
+Event time: 57.062292, type: 0 entity: 0
+Event time: 57.365566, type: 1 entity: 1
+Event time: 57.637751, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: jjjjjjjjjjjjjjjjjjjj
+A-output.
+send
+          TOLAYER3: seq: 734, ack 257, check: -3305, data: gggggggggggggggggggg
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 0.826017
+current time:57.062292
+--------------
+Event List Follows:
+Event time: 57.131482, type: 1 entity: 1
+Event time: 57.205630, type: 0 entity: 0
+Event time: 57.365566, type: 1 entity: 1
+Event time: 57.637751, type: 2 entity: 0
+--------------
+B_input
+expect:714, get 734, seq is not expected, so drop it.
+current time:57.131482
+--------------
+Event List Follows:
+Event time: 57.205630, type: 0 entity: 0
+Event time: 57.365566, type: 1 entity: 1
+Event time: 57.637751, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: kkkkkkkkkkkkkkkkkkkk
+A-output.
+send
+          TOLAYER3: seq: 754, ack 257, check: -5895, data: hhhhhhhhhhhhhhhhhhhh
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 0.826017
+current time:57.205630
+--------------
+Event List Follows:
+Event time: 57.365566, type: 1 entity: 1
+Event time: 57.637751, type: 2 entity: 0
+Event time: 57.956757, type: 0 entity: 0
+Event time: 58.169431, type: 1 entity: 1
+--------------
+B_input
+expect:714, get 714
+          TOLAYER3: seq: 237, ack 734, check: -49068, data: FFFFFFFFFFFFFFFFFFFF
+          TOLAYER3: scheduling arrival on other side
+current time:57.365566
+--------------
+Event List Follows:
+Event time: 57.637751, type: 2 entity: 0
+Event time: 57.755533, type: 1 entity: 0
+Event time: 57.956757, type: 0 entity: 0
+Event time: 58.169431, type: 1 entity: 1
+--------------
+A_timerinterrupt
+try-send
+send
+          START TIMER: starting timer at 57.637751
+          TOLAYER3: seq: 714, ack 257, check: -715, data: ffffffffffffffffffff
+          TOLAYER3: scheduling arrival on other side
+current time:57.637751
+--------------
+Event List Follows:
+Event time: 57.755533, type: 1 entity: 0
+Event time: 57.956757, type: 0 entity: 0
+Event time: 58.129928, type: 1 entity: 1
+Event time: 58.169431, type: 1 entity: 1
+Event time: 58.463767, type: 2 entity: 0
+--------------
+A_input
+          STOP TIMER: stopping timer at 57.755533
+current time:57.755533
+--------------
+Event List Follows:
+Event time: 57.956757, type: 0 entity: 0
+Event time: 58.129928, type: 1 entity: 1
+Event time: 58.169431, type: 1 entity: 1
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: llllllllllllllllllll
+A-output.
+send
+          START TIMER: starting timer at 57.956757
+          TOLAYER3: seq: 734, ack 257, check: -3305, data: gggggggggggggggggggg
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 0.890847
+current time:57.956757
+--------------
+Event List Follows:
+Event time: 58.129928, type: 1 entity: 1
+Event time: 58.169431, type: 1 entity: 1
+Event time: 58.646372, type: 1 entity: 1
+Event time: 58.847604, type: 2 entity: 0
+Event time: 59.033407, type: 0 entity: 0
+--------------
+B_input
+expect:734, get 714, seq is not expected, so drop it.
+current time:58.129928
+--------------
+Event List Follows:
+Event time: 58.169431, type: 1 entity: 1
+Event time: 58.646372, type: 1 entity: 1
+Event time: 58.847604, type: 2 entity: 0
+Event time: 59.033407, type: 0 entity: 0
+--------------
+B_input
+expect:734, get 754, seq is not expected, so drop it.
+current time:58.169431
+--------------
+Event List Follows:
+Event time: 58.646372, type: 1 entity: 1
+Event time: 58.847604, type: 2 entity: 0
+Event time: 59.033407, type: 0 entity: 0
+--------------
+B_input
+expect:734, get 734
+          TOLAYER3: seq: 237, ack 754, check: -51638, data: GGGGGGGGGGGGGGGGGGGG
+          TOLAYER3: scheduling arrival on other side
+current time:58.646372
+--------------
+Event List Follows:
+Event time: 58.847604, type: 2 entity: 0
+Event time: 59.033407, type: 0 entity: 0
+Event time: 59.488796, type: 1 entity: 0
+--------------
+A_timerinterrupt
+try-send
+send
+          START TIMER: starting timer at 58.847604
+          TOLAYER3: seq: 734, ack 257, check: -3305, data: gggggggggggggggggggg
+          TOLAYER3: scheduling arrival on other side
+current time:58.847604
+--------------
+Event List Follows:
+Event time: 59.033407, type: 0 entity: 0
+Event time: 59.375134, type: 1 entity: 1
+Event time: 59.488796, type: 1 entity: 0
+Event time: 59.738451, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: mmmmmmmmmmmmmmmmmmmm
+A-output.
+send
+          TOLAYER3: seq: 754, ack 257, check: -5895, data: hhhhhhhhhhhhhhhhhhhh
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 0.890847
+current time:59.033407
+--------------
+Event List Follows:
+Event time: 59.375134, type: 1 entity: 1
+Event time: 59.488796, type: 1 entity: 0
+Event time: 59.587321, type: 1 entity: 1
+Event time: 59.712020, type: 0 entity: 0
+Event time: 59.738451, type: 2 entity: 0
+--------------
+B_input
+expect:754, get 734, seq is not expected, so drop it.
+current time:59.375134
+--------------
+Event List Follows:
+Event time: 59.488796, type: 1 entity: 0
+Event time: 59.587321, type: 1 entity: 1
+Event time: 59.712020, type: 0 entity: 0
+Event time: 59.738451, type: 2 entity: 0
+--------------
+A_input
+          STOP TIMER: stopping timer at 59.488796
+          START TIMER: starting timer at 59.488796
+current time:59.488796
+--------------
+Event List Follows:
+Event time: 59.587321, type: 1 entity: 1
+Event time: 59.712020, type: 0 entity: 0
+Event time: 60.401565, type: 2 entity: 0
+--------------
+B_input
+expect:754, get 754
+          TOLAYER3: seq: 237, ack 774, check: -54208, data: HHHHHHHHHHHHHHHHHHHH
+          TOLAYER3: scheduling arrival on other side
+current time:59.587321
+--------------
+Event List Follows:
+Event time: 59.712020, type: 0 entity: 0
+Event time: 59.747255, type: 1 entity: 0
+Event time: 60.401565, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: nnnnnnnnnnnnnnnnnnnn
+A-output.
+send
+          TOLAYER3: packet being lost
+timeout_interval = 0.912769
+current time:59.712020
+--------------
+Event List Follows:
+Event time: 59.747255, type: 1 entity: 0
+Event time: 59.786785, type: 0 entity: 0
+Event time: 60.401565, type: 2 entity: 0
+--------------
+A_input
+          STOP TIMER: stopping timer at 59.747255
+          START TIMER: starting timer at 59.747255
+current time:59.747255
+--------------
+Event List Follows:
+Event time: 59.786785, type: 0 entity: 0
+Event time: 60.766179, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: oooooooooooooooooooo
+A-output.
+send
+          TOLAYER3: seq: 794, ack 257, check: -11075, data: jjjjjjjjjjjjjjjjjjjj
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.018924
+current time:59.786785
+--------------
+Event List Follows:
+Event time: 60.036451, type: 1 entity: 1
+Event time: 60.766179, type: 2 entity: 0
+Event time: 60.911905, type: 0 entity: 0
+--------------
+B_input
+expect:774, get 794, seq is not expected, so drop it.
+current time:60.036451
+--------------
+Event List Follows:
+Event time: 60.766179, type: 2 entity: 0
+Event time: 60.911905, type: 0 entity: 0
+--------------
+A_timerinterrupt
+try-send
+send
+          START TIMER: starting timer at 60.766179
+          TOLAYER3: packet being lost
+current time:60.766179
+--------------
+Event List Follows:
+Event time: 60.911905, type: 0 entity: 0
+Event time: 61.785102, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: pppppppppppppppppppp
+A-output.
+send
+          TOLAYER3: seq: 794, ack 257, check: -11075, data: jjjjjjjjjjjjjjjjjjjj
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.018924
+current time:60.911905
+--------------
+Event List Follows:
+Event time: 61.195942, type: 0 entity: 0
+Event time: 61.391359, type: 1 entity: 1
+Event time: 61.785102, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: qqqqqqqqqqqqqqqqqqqq
+A-output.
+send
+          TOLAYER3: seq: 814, ack 257, check: -13665, data: kkkkkkkkkkkkkkkkkkkk
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.018924
+current time:61.195942
+--------------
+Event List Follows:
+Event time: 61.391359, type: 1 entity: 1
+Event time: 61.435738, type: 1 entity: 1
+Event time: 61.752264, type: 0 entity: 0
+Event time: 61.785102, type: 2 entity: 0
+--------------
+B_input
+expect:774, get 794, seq is not expected, so drop it.
+current time:61.391359
+--------------
+Event List Follows:
+Event time: 61.435738, type: 1 entity: 1
+Event time: 61.752264, type: 0 entity: 0
+Event time: 61.785102, type: 2 entity: 0
+--------------
+B_input
+expect:774, get 814, seq is not expected, so drop it.
+current time:61.435738
+--------------
+Event List Follows:
+Event time: 61.752264, type: 0 entity: 0
+Event time: 61.785102, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: rrrrrrrrrrrrrrrrrrrr
+A-output.
+send
+          TOLAYER3: seq: 834, ack 257, check: -16255, data: llllllllllllllllllll
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.018924
+current time:61.752264
+--------------
+Event List Follows:
+Event time: 61.785102, type: 2 entity: 0
+Event time: 61.955550, type: 0 entity: 0
+Event time: 62.534782, type: 1 entity: 1
+--------------
+A_timerinterrupt
+try-send
+send
+          START TIMER: starting timer at 61.785102
+          TOLAYER3: seq: 774, ack 257, check: -8485, data: iiiiiiiiiiiiiiiiiiii
+          TOLAYER3: scheduling arrival on other side
+current time:61.785102
+--------------
+Event List Follows:
+Event time: 61.955550, type: 0 entity: 0
+Event time: 62.445876, type: 1 entity: 1
+Event time: 62.534782, type: 1 entity: 1
+Event time: 62.804026, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: ssssssssssssssssssss
+A-output.
+send
+          TOLAYER3: seq: 794, ack 257, check: -11075, data: jjjjjjjjjjjjjjjjjjjj
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.018924
+current time:61.955550
+--------------
+Event List Follows:
+Event time: 62.089381, type: 0 entity: 0
+Event time: 62.445876, type: 1 entity: 1
+Event time: 62.534782, type: 1 entity: 1
+Event time: 62.804026, type: 2 entity: 0
+Event time: 62.939742, type: 1 entity: 1
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: tttttttttttttttttttt
+A-output.
+send
+          TOLAYER3: seq: 814, ack 257, check: -13665, data: kkkkkkkkkkkkkkkkkkkk
+          TOLAYER3: packet being corrupted
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.018924
+current time:62.089381
+--------------
+Event List Follows:
+Event time: 62.445876, type: 1 entity: 1
+Event time: 62.534782, type: 1 entity: 1
+Event time: 62.609448, type: 1 entity: 1
+Event time: 62.804026, type: 2 entity: 0
+Event time: 62.939742, type: 1 entity: 1
+Event time: 63.362401, type: 0 entity: 0
+--------------
+B_input
+expect:774, get 774
+          TOLAYER3: seq: 237, ack 794, check: -56778, data: IIIIIIIIIIIIIIIIIIII
+          TOLAYER3: scheduling arrival on other side
+current time:62.445876
+--------------
+Event List Follows:
+Event time: 62.497508, type: 1 entity: 0
+Event time: 62.534782, type: 1 entity: 1
+Event time: 62.609448, type: 1 entity: 1
+Event time: 62.804026, type: 2 entity: 0
+Event time: 62.939742, type: 1 entity: 1
+Event time: 63.362401, type: 0 entity: 0
+--------------
+A_input
+          STOP TIMER: stopping timer at 62.497508
+          START TIMER: starting timer at 62.497508
+current time:62.497508
+--------------
+Event List Follows:
+Event time: 62.534782, type: 1 entity: 1
+Event time: 62.609448, type: 1 entity: 1
+Event time: 62.939742, type: 1 entity: 1
+Event time: 63.362401, type: 0 entity: 0
+Event time: 63.468465, type: 2 entity: 0
+--------------
+B_input
+expect:794, get 834, seq is not expected, so drop it.
+current time:62.534782
+--------------
+Event List Follows:
+Event time: 62.609448, type: 1 entity: 1
+Event time: 62.939742, type: 1 entity: 1
+Event time: 63.362401, type: 0 entity: 0
+Event time: 63.468465, type: 2 entity: 0
+--------------
+B_input
+expect:794, get 999999, seq is not expected, so drop it.
+current time:62.609448
+--------------
+Event List Follows:
+Event time: 62.939742, type: 1 entity: 1
+Event time: 63.362401, type: 0 entity: 0
+Event time: 63.468465, type: 2 entity: 0
+--------------
+B_input
+expect:794, get 794
+          TOLAYER3: seq: 237, ack 814, check: -59348, data: JJJJJJJJJJJJJJJJJJJJ
+          TOLAYER3: scheduling arrival on other side
+current time:62.939742
+--------------
+Event List Follows:
+Event time: 62.950487, type: 1 entity: 0
+Event time: 63.362401, type: 0 entity: 0
+Event time: 63.468465, type: 2 entity: 0
+--------------
+A_input
+          STOP TIMER: stopping timer at 62.950487
+          START TIMER: starting timer at 62.950487
+current time:62.950487
+--------------
+Event List Follows:
+Event time: 63.362401, type: 0 entity: 0
+Event time: 64.381981, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: uuuuuuuuuuuuuuuuuuuu
+A-output.
+send
+          TOLAYER3: seq: 834, ack 257, check: -16255, data: llllllllllllllllllll
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.431494
+current time:63.362401
+--------------
+Event List Follows:
+Event time: 63.791327, type: 0 entity: 0
+Event time: 63.813981, type: 1 entity: 1
+Event time: 64.381981, type: 2 entity: 0
+--------------
+          GENERATE NEXT ARRIVAL: creating new arrival
+          MAINLOOP: data given to student: vvvvvvvvvvvvvvvvvvvv
+A-output.
+send
+          TOLAYER3: seq: 854, ack 257, check: -18845, data: mmmmmmmmmmmmmmmmmmmm
+          TOLAYER3: scheduling arrival on other side
+timeout_interval = 1.431494
+routine exit because there is no event.

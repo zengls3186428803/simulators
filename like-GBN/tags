@@ -4,29 +4,48 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-A	main.c	13;"	d	file:
+A	b_main.c	28;"	d	file:
+A	main.c	16;"	d	file:
 A	test.c	/^struct A{$/;"	s	file:
 A::a	test.c	/^	int a;$/;"	m	struct:A	file:	access:public
 A::b	test.c	/^	int b;$/;"	m	struct:A	file:	access:public
 A::c	test.c	/^	char c;$/;"	m	struct:A	file:	access:public
+A_init	b_main.c	/^void A_init() {$/;"	f
+A_init	b_main.c	/^void A_init();$/;"	p	file:
 A_init	main.c	/^void A_init() {$/;"	f
 A_init	main.c	/^void A_init();$/;"	p	file:
+A_input	b_main.c	/^void A_input(Segment seg);$/;"	p	file:	signature:(Segment seg)
+A_input	b_main.c	/^void A_input(Segment seg){$/;"	f	signature:(Segment seg)
 A_input	main.c	/^void A_input(Segment seg);$/;"	p	file:	signature:(Segment seg)
 A_input	main.c	/^void A_input(Segment seg){$/;"	f	signature:(Segment seg)
+A_output	b_main.c	/^void A_output(Message msg);$/;"	p	file:	signature:(Message msg)
+A_output	b_main.c	/^void A_output(Message msg){$/;"	f	signature:(Message msg)
 A_output	main.c	/^void A_output(Message msg);$/;"	p	file:	signature:(Message msg)
 A_output	main.c	/^void A_output(Message msg){$/;"	f	signature:(Message msg)
+A_timerinterrupt	b_main.c	/^void A_timerinterrupt();$/;"	p	file:
+A_timerinterrupt	b_main.c	/^void A_timerinterrupt(){$/;"	f
 A_timerinterrupt	main.c	/^void A_timerinterrupt();$/;"	p	file:
 A_timerinterrupt	main.c	/^void A_timerinterrupt(){$/;"	f
-B	main.c	14;"	d	file:
+B	b_main.c	29;"	d	file:
+B	main.c	17;"	d	file:
 B	test.c	/^typedef struct A B;$/;"	t	typeref:struct:A	file:
-BIDIRECTIONAL	main.c	8;"	d	file:
+BIDIRECTIONAL	b_main.c	22;"	d	file:
+BIDIRECTIONAL	main.c	10;"	d	file:
 BUFFER_SIZE	transport_layer.h	9;"	d
+B_init	b_main.c	/^void B_init() {$/;"	f
+B_init	b_main.c	/^void B_init();$/;"	p	file:
 B_init	main.c	/^void B_init() {$/;"	f
 B_init	main.c	/^void B_init();$/;"	p	file:
+B_input	b_main.c	/^void B_input(Segment seg);;$/;"	p	file:	signature:(Segment seg)
+B_input	b_main.c	/^void B_input(Segment seg){$/;"	f	signature:(Segment seg)
 B_input	main.c	/^void B_input(Segment seg);;$/;"	p	file:	signature:(Segment seg)
 B_input	main.c	/^void B_input(Segment seg){$/;"	f	signature:(Segment seg)
+B_output	b_main.c	/^void B_output(Message msg);$/;"	p	file:	signature:(Message msg)
+B_output	b_main.c	/^void B_output(Message msg){$/;"	f	signature:(Message msg)
 B_output	main.c	/^void B_output(Message msg);$/;"	p	file:	signature:(Message msg)
 B_output	main.c	/^void B_output(Message msg){$/;"	f	signature:(Message msg)
+B_timerinterrupt	b_main.c	/^void B_timerinterrupt();$/;"	p	file:
+B_timerinterrupt	b_main.c	/^void B_timerinterrupt(){$/;"	f
 B_timerinterrupt	main.c	/^void B_timerinterrupt();$/;"	p	file:
 B_timerinterrupt	main.c	/^void B_timerinterrupt(){$/;"	f
 Bool	transport_layer.h	/^typedef int Bool;$/;"	t
@@ -54,8 +73,10 @@ Event_manager_Constructor	event_manager.h	/^Event_manager *Event_manager_Constru
 Event_time	event_manager.h	/^typedef double Event_time;$/;"	t
 Event_what	event_manager.h	/^typedef int Event_what;$/;"	t
 Event_who	event_manager.h	/^typedef int Event_who;$/;"	t
-FROM_LAYER3	main.c	10;"	d	file:
-FROM_LAYER5	main.c	9;"	d	file:
+FROM_LAYER3	b_main.c	24;"	d	file:
+FROM_LAYER3	main.c	12;"	d	file:
+FROM_LAYER5	b_main.c	23;"	d	file:
+FROM_LAYER5	main.c	11;"	d	file:
 False	transport_layer.h	8;"	d
 MSG_MAX	msg_and_seg.h	5;"	d
 Message	msg_and_seg.h	/^struct Message{\/\/application layer message$/;"	s
@@ -69,19 +90,24 @@ Segment::check_sum	msg_and_seg.h	/^	unsigned int check_sum;$/;"	m	struct:Segment
 Segment::payload	msg_and_seg.h	/^	char payload[MSG_MAX];$/;"	m	struct:Segment	access:public
 Segment::rwnd	msg_and_seg.h	/^	unsigned int rwnd;$/;"	m	struct:Segment	access:public
 Segment::seq_num	msg_and_seg.h	/^	unsigned int seq_num;$/;"	m	struct:Segment	access:public
-TIME_INTERRUPT	main.c	11;"	d	file:
+TIME_INTERRUPT	b_main.c	25;"	d	file:
+TIME_INTERRUPT	main.c	13;"	d	file:
+TRACE	b_main.c	/^int TRACE = 1;             \/* for my debugging *\/$/;"	v
 TRACE	main.c	/^int TRACE = 1;             \/* for my debugging *\/$/;"	v
-TRY_SEND	main.c	12;"	d	file:
-Transport_layer_receiver	main.c	/^struct Transport_layer_receiver{$/;"	s	file:
-Transport_layer_receiver	main.c	/^typedef struct Transport_layer_receiver Transport_layer_receiver;$/;"	t	typeref:struct:Transport_layer_receiver	file:
-Transport_layer_receiver::buffer	main.c	/^	Byte buffer[BUFFER_SIZE];$/;"	m	struct:Transport_layer_receiver	file:	access:public
-Transport_layer_receiver::buffer_size	main.c	/^	int buffer_size;$/;"	m	struct:Transport_layer_receiver	file:	access:public
-Transport_layer_receiver::cache_next	main.c	/^	int cache_next;$/;"	m	struct:Transport_layer_receiver	file:	access:public
-Transport_layer_receiver::exist	main.c	/^	Byte exist[BUFFER_SIZE];$/;"	m	struct:Transport_layer_receiver	file:	access:public
-Transport_layer_receiver::expected_next	main.c	/^	int expected_next;$/;"	m	struct:Transport_layer_receiver	file:	access:public
-Transport_layer_receiver::expected_seq_num	main.c	/^	unsigned int expected_seq_num;$/;"	m	struct:Transport_layer_receiver	file:	access:public
-Transport_layer_receiver::head	main.c	/^	int head;$/;"	m	struct:Transport_layer_receiver	file:	access:public
-Transport_layer_receiver::tail	main.c	/^	int tail;$/;"	m	struct:Transport_layer_receiver	file:	access:public
+TRY_RECEIVE	b_main.c	27;"	d	file:
+TRY_RECEIVE	main.c	15;"	d	file:
+TRY_SEND	b_main.c	26;"	d	file:
+TRY_SEND	main.c	14;"	d	file:
+Transport_layer_receiver	b_main.c	/^struct Transport_layer_receiver{$/;"	s	file:
+Transport_layer_receiver	b_main.c	/^typedef struct Transport_layer_receiver Transport_layer_receiver;$/;"	t	typeref:struct:Transport_layer_receiver	file:
+Transport_layer_receiver::buffer	b_main.c	/^	Byte buffer[BUFFER_SIZE];$/;"	m	struct:Transport_layer_receiver	file:	access:public
+Transport_layer_receiver::buffer_size	b_main.c	/^	int buffer_size;$/;"	m	struct:Transport_layer_receiver	file:	access:public
+Transport_layer_receiver::cache_next	b_main.c	/^	int cache_next;$/;"	m	struct:Transport_layer_receiver	file:	access:public
+Transport_layer_receiver::exist	b_main.c	/^	Byte exist[BUFFER_SIZE];$/;"	m	struct:Transport_layer_receiver	file:	access:public
+Transport_layer_receiver::expected_next	b_main.c	/^	int expected_next;$/;"	m	struct:Transport_layer_receiver	file:	access:public
+Transport_layer_receiver::expected_seq_num	b_main.c	/^	unsigned int expected_seq_num;$/;"	m	struct:Transport_layer_receiver	file:	access:public
+Transport_layer_receiver::head	b_main.c	/^	int head;$/;"	m	struct:Transport_layer_receiver	file:	access:public
+Transport_layer_receiver::tail	b_main.c	/^	int tail;$/;"	m	struct:Transport_layer_receiver	file:	access:public
 Transport_layer_sender	transport_layer.h	/^struct Transport_layer_sender{$/;"	s
 Transport_layer_sender	transport_layer.h	/^typedef struct Transport_layer_sender Transport_layer_sender;$/;"	t	typeref:struct:Transport_layer_sender
 Transport_layer_sender::ack_num_sent	transport_layer.h	/^	unsigned int ack_num_sent;$/;"	m	struct:Transport_layer_sender	access:public
@@ -89,7 +115,6 @@ Transport_layer_sender::alpha	transport_layer.h	/^	double alpha;$/;"	m	struct:Tr
 Transport_layer_sender::beta	transport_layer.h	/^	double beta;$/;"	m	struct:Transport_layer_sender	access:public
 Transport_layer_sender::buffer	transport_layer.h	/^	Byte buffer[BUFFER_SIZE];$/;"	m	struct:Transport_layer_sender	access:public
 Transport_layer_sender::buffer_size	transport_layer.h	/^	int buffer_size;$/;"	m	struct:Transport_layer_sender	access:public
-Transport_layer_sender::calculate_check_sum	transport_layer.h	/^	unsigned int (*calculate_check_sum)(Segment *seg_ptr);$/;"	m	struct:Transport_layer_sender	access:public
 Transport_layer_sender::deviate_rrt	transport_layer.h	/^	double deviate_rrt;$/;"	m	struct:Transport_layer_sender	access:public
 Transport_layer_sender::estimated_rrt	transport_layer.h	/^	double estimated_rrt;$/;"	m	struct:Transport_layer_sender	access:public
 Transport_layer_sender::expected_ack_num	transport_layer.h	/^	unsigned int expected_ack_num;$/;"	m	struct:Transport_layer_sender	access:public
@@ -119,39 +144,52 @@ ack_num_sent	transport_layer.h	/^	unsigned int ack_num_sent;$/;"	m	struct:Transp
 alpha	transport_layer.h	/^	double alpha;$/;"	m	struct:Transport_layer_sender	access:public
 b	test.c	/^	int b;$/;"	m	struct:A	file:	access:public
 beta	transport_layer.h	/^	double beta;$/;"	m	struct:Transport_layer_sender	access:public
-buffer	main.c	/^	Byte buffer[BUFFER_SIZE];$/;"	m	struct:Transport_layer_receiver	file:	access:public
+buffer	b_main.c	/^	Byte buffer[BUFFER_SIZE];$/;"	m	struct:Transport_layer_receiver	file:	access:public
 buffer	transport_layer.h	/^	Byte buffer[BUFFER_SIZE];$/;"	m	struct:Transport_layer_sender	access:public
-buffer_size	main.c	/^	int buffer_size;$/;"	m	struct:Transport_layer_receiver	file:	access:public
+buffer_size	b_main.c	/^	int buffer_size;$/;"	m	struct:Transport_layer_receiver	file:	access:public
 buffer_size	transport_layer.h	/^	int buffer_size;$/;"	m	struct:Transport_layer_sender	access:public
 c	test.c	/^	char c;$/;"	m	struct:A	file:	access:public
-cache_next	main.c	/^	int cache_next;$/;"	m	struct:Transport_layer_receiver	file:	access:public
+cache_next	b_main.c	/^	int cache_next;$/;"	m	struct:Transport_layer_receiver	file:	access:public
+calculate_check_sum	b_main.c	/^unsigned int calculate_check_sum(Segment *seg_ptr);$/;"	p	file:	signature:(Segment *seg_ptr)
 calculate_check_sum	main.c	/^unsigned int calculate_check_sum(Segment *seg_ptr);$/;"	p	file:	signature:(Segment *seg_ptr)
 calculate_check_sum	transport_layer.c	/^unsigned int calculate_check_sum(Segment *seg_ptr) {$/;"	f	signature:(Segment *seg_ptr)
-calculate_check_sum	transport_layer.h	/^	unsigned int (*calculate_check_sum)(Segment *seg_ptr);$/;"	m	struct:Transport_layer_sender	access:public
 calculate_check_sum	transport_layer.h	/^unsigned int calculate_check_sum(Segment *seg_ptr);$/;"	p	signature:(Segment *seg_ptr)
 check_sum	msg_and_seg.h	/^	unsigned int check_sum;$/;"	m	struct:Segment	access:public
+corruptprob	b_main.c	/^double corruptprob;         \/* probability that one bit is packet is flipped *\/$/;"	v
 corruptprob	main.c	/^double corruptprob;         \/* probability that one bit is packet is flipped *\/$/;"	v
 data	msg_and_seg.h	/^	char data[MSG_MAX];$/;"	m	struct:Message	access:public
 delete	event_manager.c	/^void delete(Event_list *el, Event *e){$/;"	f	signature:(Event_list *el, Event *e)
 deviate_rrt	transport_layer.h	/^	double deviate_rrt;$/;"	m	struct:Transport_layer_sender	access:public
 entity	event_manager.h	/^	Event_who entity;$/;"	m	struct:Event	access:public
 estimated_rrt	transport_layer.h	/^	double estimated_rrt;$/;"	m	struct:Transport_layer_sender	access:public
+event_manager	b_main.c	/^Event_manager *event_manager;$/;"	v
 event_manager	main.c	/^Event_manager *event_manager;$/;"	v
-exist	main.c	/^	Byte exist[BUFFER_SIZE];$/;"	m	struct:Transport_layer_receiver	file:	access:public
+exist	b_main.c	/^	Byte exist[BUFFER_SIZE];$/;"	m	struct:Transport_layer_receiver	file:	access:public
 expected_ack_num	transport_layer.h	/^	unsigned int expected_ack_num;$/;"	m	struct:Transport_layer_sender	access:public
-expected_next	main.c	/^	int expected_next;$/;"	m	struct:Transport_layer_receiver	file:	access:public
-expected_seq_num	main.c	/^	unsigned int expected_seq_num;$/;"	m	struct:Transport_layer_receiver	file:	access:public
+expected_next	b_main.c	/^	int expected_next;$/;"	m	struct:Transport_layer_receiver	file:	access:public
+expected_seq	main.c	/^unsigned expected_seq;$/;"	v
+expected_seq_num	b_main.c	/^	unsigned int expected_seq_num;$/;"	m	struct:Transport_layer_receiver	file:	access:public
 f	test.c	/^void f(struct A b) {$/;"	f	signature:(struct A b)
+generate_future_try_receive	b_main.c	/^void generate_future_try_receive(Event_who entity) {$/;"	f	signature:(Event_who entity)
+generate_future_try_receive	b_main.c	/^void generate_future_try_receive(Event_who entity);$/;"	p	file:	signature:(Event_who entity)
+generate_future_try_receive	main.c	/^void generate_future_try_receive(Event_who entity) {$/;"	f	signature:(Event_who entity)
+generate_future_try_receive	main.c	/^void generate_future_try_receive(Event_who entity);$/;"	p	file:	signature:(Event_who entity)
+generate_future_try_send	b_main.c	/^void generate_future_try_send(Event_who entity) {$/;"	f	signature:(Event_who entity)
+generate_future_try_send	b_main.c	/^void generate_future_try_send(Event_who entity);$/;"	p	file:	signature:(Event_who entity)
 generate_future_try_send	main.c	/^void generate_future_try_send(Event_who entity) {$/;"	f	signature:(Event_who entity)
 generate_future_try_send	main.c	/^void generate_future_try_send(Event_who entity);$/;"	p	file:	signature:(Event_who entity)
+generate_next_arrival	b_main.c	/^void generate_next_arrival();$/;"	p	file:
+generate_next_arrival	b_main.c	/^void generate_next_arrival(){$/;"	f
 generate_next_arrival	main.c	/^void generate_next_arrival();$/;"	p	file:
 generate_next_arrival	main.c	/^void generate_next_arrival(){$/;"	f
 get_event	event_manager.c	/^Event *get_event(Event_list *el) {$/;"	f	signature:(Event_list *el)
 get_event	event_manager.h	/^	Event *(*get_event)(struct Event_list *el);$/;"	m	struct:Event_list	access:public
 get_event	event_manager.h	/^Event *get_event(Event_list *el);$/;"	p	signature:(Event_list *el)
+head	b_main.c	/^	int head;$/;"	m	struct:Transport_layer_receiver	file:	access:public
 head	event_manager.h	/^	Event *head;$/;"	m	struct:Event_list	access:public
-head	main.c	/^	int head;$/;"	m	struct:Transport_layer_receiver	file:	access:public
 head	transport_layer.h	/^	int head;$/;"	m	struct:Transport_layer_sender	access:public
+init	b_main.c	/^void init();$/;"	p	file:
+init	b_main.c	/^void init(){$/;"	f
 init	main.c	/^void init();$/;"	p	file:
 init	main.c	/^void init(){$/;"	f
 insert	event_manager.c	/^void insert(Event_list *el,Event *e){$/;"	f	signature:(Event_list *el,Event *e)
@@ -161,60 +199,91 @@ is_empty	transport_layer.c	/^Bool is_empty(Transport_layer_sender *sender) {$/;"
 is_empty	transport_layer.h	/^	Bool (*is_empty)(struct Transport_layer_sender *sender);$/;"	m	struct:Transport_layer_sender	access:public
 is_empty	transport_layer.h	/^Bool is_empty(Transport_layer_sender *sender);$/;"	p	signature:(Transport_layer_sender *sender)
 is_timing	transport_layer.h	/^	int is_timing;$/;"	m	struct:Transport_layer_sender	access:public
-is_wraparound	main.c	/^Bool is_wraparound(unsigned expected_seq_num, unsigned seq_num) {$/;"	f	signature:(unsigned expected_seq_num, unsigned seq_num)
+is_wraparound	b_main.c	/^Bool is_wraparound(unsigned expected_seq_num, unsigned seq_num) {$/;"	f	signature:(unsigned expected_seq_num, unsigned seq_num)
 isfull	transport_layer.c	/^Bool isfull(Transport_layer_sender *sender) {$/;"	f	signature:(Transport_layer_sender *sender)
 isfull	transport_layer.h	/^	Bool (*isfull)(struct Transport_layer_sender *sender);$/;"	m	struct:Transport_layer_sender	access:public
 isfull	transport_layer.h	/^Bool isfull(Transport_layer_sender *sender);$/;"	p	signature:(Transport_layer_sender *sender)
+jimsrand	b_main.c	/^double jimsrand();$/;"	p	file:
 jimsrand	main.c	/^double jimsrand();$/;"	p	file:
 jimsrand	tool.c	/^double jimsrand() {$/;"	f
 jimsrand	tool.h	/^double jimsrand();$/;"	p	signature:()
+lambda	b_main.c	/^double lambda;              \/* arrival rate of messages from layer 5 *\/   $/;"	v
 lambda	main.c	/^double lambda;              \/* arrival rate of messages from layer 5 *\/   $/;"	v
 len	msg_and_seg.h	/^	int len;$/;"	m	struct:Message	access:public
+lossprob	b_main.c	/^double lossprob;            \/* probability that a packet is dropped  *\/$/;"	v
 lossprob	main.c	/^double lossprob;            \/* probability that a packet is dropped  *\/$/;"	v
+main	b_main.c	/^int main() {$/;"	f
 main	main.c	/^int main() {$/;"	f
 main	test.c	/^int main() {$/;"	f
 max_swnd	transport_layer.h	/^	int max_swnd;\/\/max value of sender receive.$/;"	m	struct:Transport_layer_sender	access:public
+ncorrupt	b_main.c	/^int ncorrupt;              \/* number corrupted by media*\/$/;"	v
 ncorrupt	main.c	/^int ncorrupt;              \/* number corrupted by media*\/$/;"	v
 next	event_manager.h	/^	struct Event *next;$/;"	m	struct:Event	typeref:struct:Event::Event	access:public
 next	transport_layer.h	/^	int next;$/;"	m	struct:Transport_layer_sender	access:public
 next_send_num	transport_layer.h	/^	unsigned int next_send_num;$/;"	m	struct:Transport_layer_sender	access:public
+nlost	b_main.c	/^int   nlost;               \/* number lost in media *\/$/;"	v
 nlost	main.c	/^int   nlost;               \/* number lost in media *\/$/;"	v
+nsim	b_main.c	/^int nsim = 0;              \/* number of messages from 5 to 4 so far *\/ $/;"	v
 nsim	main.c	/^int nsim = 0;              \/* number of messages from 5 to 4 so far *\/ $/;"	v
+nsimmax	b_main.c	/^int nsimmax = 0;           \/* number of msgs to generate, then stop *\/$/;"	v
 nsimmax	main.c	/^int nsimmax = 0;           \/* number of msgs to generate, then stop *\/$/;"	v
+ntolayer3	b_main.c	/^int   ntolayer3;           \/* number sent into layer 3 *\/$/;"	v
 ntolayer3	main.c	/^int   ntolayer3;           \/* number sent into layer 3 *\/$/;"	v
 payload	msg_and_seg.h	/^	char payload[MSG_MAX];$/;"	m	struct:Segment	access:public
 prev	event_manager.h	/^	struct Event *prev;$/;"	m	struct:Event	typeref:struct:Event::Event	access:public
-receiver	main.c	/^Transport_layer_receiver receiver;$/;"	v
+receive	b_main.c	/^void receive(Event_who entity, Transport_layer_receiver *receiver) {$/;"	f	signature:(Event_who entity, Transport_layer_receiver *receiver)
+receive	b_main.c	/^void receive(Event_who entity, Transport_layer_receiver *receiver);$/;"	p	file:	signature:(Event_who entity, Transport_layer_receiver *receiver)
+receive	main.c	/^void receive(Event_who entity, Transport_layer_receiver *receiver);$/;"	p	file:	signature:(Event_who entity, Transport_layer_receiver *receiver)
+receiverA	b_main.c	/^Transport_layer_receiver receiverA;$/;"	v
+receiverB	b_main.c	/^Transport_layer_receiver receiverB;$/;"	v
 rwnd	msg_and_seg.h	/^	unsigned int rwnd;$/;"	m	struct:Segment	access:public
 rwnd	transport_layer.h	/^	int rwnd;\/\/receive window$/;"	m	struct:Transport_layer_sender	access:public
 search_by_who_what	event_manager.c	/^Event *search_by_who_what(Event_list *el, Event_who entity, Event_what what) {$/;"	f	signature:(Event_list *el, Event_who entity, Event_what what)
 search_by_who_what	event_manager.h	/^	Event *(*search_by_who_what)(struct Event_list *el, Event_who entity, Event_what event_what);$/;"	m	struct:Event_list	access:public
 search_by_who_what	event_manager.h	/^Event *search_by_who_what(Event_list *el, Event_who entity, Event_what what);$/;"	p	signature:(Event_list *el, Event_who entity, Event_what what)
 seg_ptr	event_manager.h	/^	struct Segment *seg_ptr;$/;"	m	struct:Event	typeref:struct:Event::Segment	access:public
+send	b_main.c	/^void send(Event_who entity ,Transport_layer_sender *sender) {$/;"	f	signature:(Event_who entity ,Transport_layer_sender *sender)
+send	b_main.c	/^void send(Event_who entity ,Transport_layer_sender *sender);$/;"	p	file:	signature:(Event_who entity ,Transport_layer_sender *sender)
 send	main.c	/^void send(Event_who entity ,Transport_layer_sender *sender) {$/;"	f	signature:(Event_who entity ,Transport_layer_sender *sender)
 send	main.c	/^void send(Event_who entity ,Transport_layer_sender *sender);$/;"	p	file:	signature:(Event_who entity ,Transport_layer_sender *sender)
 send_time	transport_layer.h	/^	double send_time;$/;"	m	struct:Transport_layer_sender	access:public
+senderA	b_main.c	/^Transport_layer_sender *senderA;$/;"	v
 senderA	main.c	/^Transport_layer_sender *senderA;$/;"	v
+senderB	b_main.c	/^Transport_layer_sender *senderB;$/;"	v
 senderB	main.c	/^Transport_layer_sender *senderB;$/;"	v
+seq	main.c	/^unsigned seq;$/;"	v
 seq_num	msg_and_seg.h	/^	unsigned int seq_num;$/;"	m	struct:Segment	access:public
 show	event_manager.c	/^void show(Event_list *el) {$/;"	f	signature:(Event_list *el)
 show	event_manager.h	/^	void (*show)(struct Event_list *el);$/;"	m	struct:Event_list	access:public
 show	event_manager.h	/^void show(Event_list *el);$/;"	p	signature:(Event_list *el)
+starttimer	b_main.c	/^void starttimer(int AorB,double increment){$/;"	f	signature:(int AorB,double increment)
 starttimer	main.c	/^void starttimer(int AorB,double increment){$/;"	f	signature:(int AorB,double increment)
+stoptimer	b_main.c	/^void stoptimer(int AorB) {$/;"	f	signature:(int AorB)
 stoptimer	main.c	/^void stoptimer(int AorB) {$/;"	f	signature:(int AorB)
-tail	main.c	/^	int tail;$/;"	m	struct:Transport_layer_receiver	file:	access:public
+tail	b_main.c	/^	int tail;$/;"	m	struct:Transport_layer_receiver	file:	access:public
 tail	transport_layer.h	/^	int tail;$/;"	m	struct:Transport_layer_sender	access:public
+time	b_main.c	/^double time = 0.000;$/;"	v
 time	event_manager.h	/^	Event_time time;$/;"	m	struct:Event	access:public
 time	main.c	/^double time = 0.000;$/;"	v
 timeout_interval	transport_layer.h	/^	double timeout_interval;$/;"	m	struct:Transport_layer_sender	access:public
+tolayer3	b_main.c	/^void tolayer3(int AorB, Segment packet) {$/;"	f	signature:(int AorB, Segment packet)
 tolayer3	main.c	/^void tolayer3(int AorB, Segment packet) {$/;"	f	signature:(int AorB, Segment packet)
+tolayer5	b_main.c	/^void tolayer5(int AorB,Message msg) {$/;"	f	signature:(int AorB,Message msg)
 tolayer5	main.c	/^void tolayer5(int AorB,Message msg) {$/;"	f	signature:(int AorB,Message msg)
+try_receive	b_main.c	/^void try_receive(Event_who entity) {$/;"	f	signature:(Event_who entity)
+try_receive	b_main.c	/^void try_receive(Event_who entity);$/;"	p	file:	signature:(Event_who entity)
+try_receive	main.c	/^void try_receive(Event_who entity);$/;"	p	file:	signature:(Event_who entity)
+try_send	b_main.c	/^void try_send(Event_who entity) {$/;"	f	signature:(Event_who entity)
+try_send	b_main.c	/^void try_send(Event_who entity);$/;"	p	file:	signature:(Event_who entity)
 try_send	main.c	/^void try_send(Event_who entity) {$/;"	f	signature:(Event_who entity)
 try_send	main.c	/^void try_send(Event_who entity);$/;"	p	file:	signature:(Event_who entity)
+ui	b_main.c	/^typedef unsigned int ui;$/;"	t	file:
 ui	main.c	/^typedef unsigned int ui;$/;"	t	file:
+update_timeout_interval	b_main.c	/^double update_timeout_interval(Transport_layer_sender *sender);$/;"	p	file:	signature:(Transport_layer_sender *sender)
 update_timeout_interval	main.c	/^double update_timeout_interval(Transport_layer_sender *sender);$/;"	p	file:	signature:(Transport_layer_sender *sender)
 update_timeout_interval	transport_layer.c	/^double update_timeout_interval(Transport_layer_sender *sender) {$/;"	f	signature:(Transport_layer_sender *sender)
 update_timeout_interval	transport_layer.h	/^	double (*update_timeout_interval)(struct Transport_layer_sender *sender);$/;"	m	struct:Transport_layer_sender	access:public
 update_timeout_interval	transport_layer.h	/^double update_timeout_interval(Transport_layer_sender *sender);$/;"	p	signature:(Transport_layer_sender *sender)
+usi	b_main.c	/^typedef unsigned short int usi;$/;"	t	file:
 usi	main.c	/^typedef unsigned short int usi;$/;"	t	file:
 what	event_manager.h	/^	Event_what what;$/;"	m	struct:Event	access:public

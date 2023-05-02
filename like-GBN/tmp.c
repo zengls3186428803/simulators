@@ -6,6 +6,18 @@
 #include"tool.h"
 #include"transport_layer.h"
 
+struct Transport_layer_receiver{
+	Byte buffer[BUFFER_SIZE];
+	Byte exist[BUFFER_SIZE];
+	int buffer_size;
+
+	int head;
+	int tail;
+	int expected_next;
+	int cache_next;
+	unsigned int expected_seq_num;
+};
+typedef struct Transport_layer_receiver Transport_layer_receiver;
 
 #define BIDIRECTIONAL 0
 #define FROM_LAYER5 0
@@ -46,6 +58,8 @@ void generate_future_try_send(Event_who entity);
 void generate_future_try_receive(Event_who entity);
 void send(Event_who entity ,Transport_layer_sender *sender);
 void try_send(Event_who entity);
+void try_receive(Event_who entity);
+void receive(Event_who entity, Transport_layer_receiver *receiver);
 
 Event_manager *event_manager;
 int main() {
@@ -107,6 +121,7 @@ int main() {
 		} else if(eptr->what == TRY_SEND) {
 			try_send(eptr->entity);
 		} else if(eptr->what == TRY_RECEIVE) {
+			try_receive(eptr->entity);
 		} else  {
 			printf("INTERNAL PANIC: unknown event type \n");
 		}
@@ -254,7 +269,6 @@ void tolayer3(int AorB, Segment packet) {
 			lastime = q->time;
 	//eptr->time =  lastime + 1 + 9*jimsrand();
 	eptr->time = lastime + jimsrand();
-	eptr->time = time + jimsrand();
 
 
 
@@ -307,6 +321,10 @@ void generate_future_try_receive(Event_who entity) {
  *************************************************************************************
  */
 
+Transport_layer_receiver receiverA;
+Transport_layer_receiver receiverB;
+
+
 Transport_layer_sender *senderA;
 Transport_layer_sender *senderB;
 typedef unsigned int ui;
@@ -326,37 +344,60 @@ void send(Event_who entity ,Transport_layer_sender *sender) {
 	if(is_empty(sender)) return;
 	if(!sender->is_timing) {
 		starttimer(entity, sender->timeout_interval);
+		sender->send_time = time;
 		sender->is_timing = 1;
 	}
-	sender->send_time = time;
 	Segment seg;
-	seg.seq_num = sender->expected_ack_num + (sender->next - sender->head);
+	seg.seq_num = sender->expected_ack_num + (sender->next + sender->buffer_size - sender->head) % sender->buffer_size;
 	int i;
 	for(i = 0; i < MSG_MAX; ++i) seg.payload[i] = 0;
 	for(i = 0; i < MSG_MAX; ++i) {
 		if(is_empty(sender) || sender->next == sender->tail) {//have sent all.
 			break;
 		}
-		if(i == sender->rwnd || sender->next == sender->head + sender->max_swnd) {//rwnd is full or swnd is full
-			printf("i:%d, other's rwnd:%d, next:%d, head+maxswnd:%d\n", i, sender->rwnd, sender->next,sender->head + sender->max_swnd);
+		if(i == sender->rwnd || sender->next == (sender->head + sender->max_swnd)%sender->buffer_size) {//rwnd is full or swnd is full
+			printf("i:%d, rwnd:%d, next:%d, head+wnd:%d\n", i, sender->rwnd, sender->next,sender->head + sender->max_swnd);
 			generate_future_try_send(entity);
 			break;
 		}
 		seg.payload[i] = sender->buffer[senderA->next];
 		sender->next += 1;
+		sender->next = sender->next % sender->buffer_size;
 	}
 	sender->rwnd -= i;
-	seg.ack_num = sender->ack_num_sent;
 	seg.check_sum = calculate_check_sum(&seg);
+	seg.ack_num = sender->ack_num_sent;
 	tolayer3(A, seg);
 }
-
+void try_receive(Event_who entity) {
+	if(entity == A) {
+		receive(A, &receiverA);
+	} else if(entity == B){
+		receive(B, &receiverB);
+	}
+}
+void receive(Event_who entity, Transport_layer_receiver *receiver) {
+	Message msg;
+	int i;
+	for(i = 0; i < MSG_MAX; ++i) msg.data[i] = 0;
+	for(i = 0; i < MSG_MAX; ++i) {
+		if(receiver->head != receiver->tail) {
+			if(receiver->exist[receiver->head] != 0) {	
+				msg.data[i] = receiver->buffer[receiver->head];
+				receiver->head += 1;
+				receiver->head %= receiver->buffer_size;
+			} else {
+				break;
+			}
+		} 
+	}
+	tolayer5(entity, msg);
+	if(receiver->head != receiver->tail && receiver->exist[receiver->head]) {
+		generate_future_try_receive(entity);
+	}
+}
 void A_output(Message msg){
 	printf("A-output.\n");
-	if(isfull(senderA)) {
-		printf("sender buffer is full, so drop this message\n");
-		return;
-	}
 	int i = 0;
 	for(i = 0; i < MSG_MAX; ++i) {
 		if(isfull(senderA)) {
@@ -364,13 +405,16 @@ void A_output(Message msg){
 			break;
 		} else {
 			senderA->buffer[senderA->tail] = msg.data[i];
-			senderA->tail += 1;
+			++senderA->tail;
+			senderA->tail %= senderA->buffer_size;
 		}
 	}
 	send(A, senderA);
 	printf("timeout_interval = %lf\n", senderA->timeout_interval);
 }
-
+void B_output(Message msg){
+	printf("B-output.\n");
+}
 void A_input(Segment seg){
 	printf("A_input\n");
 	senderA->update_timeout_interval(senderA);
@@ -378,52 +422,73 @@ void A_input(Segment seg){
 		printf("error:check sum=%d\n",seg.check_sum + ~calculate_check_sum(&seg));
 	}
 	if(seg.ack_num > senderA->expected_ack_num) {
-		senderA->head += seg.ack_num - senderA->expected_ack_num;
 		senderA->expected_ack_num = seg.ack_num;
-		senderA->rwnd = seg.rwnd;
-		senderA->ack_num_sent = seg.seq_num + MSG_MAX;
+		senderA->head += MSG_MAX;
 		stoptimer(A);
-		senderA->is_timing = 0;
-		if(senderA->head != senderA->next) {
-			starttimer(A, senderA->timeout_interval);
-			senderA->is_timing = 1;
-		}
-	} 
+		if(senderA->head != senderA->next) starttimer(A, senderA->timeout_interval);
+	} else if(seg.ack_num < senderA->expected_ack_num) {
+		printf("senderA receive a redundant ack\n");
+	}
 }
 
-unsigned expected_seq;
-unsigned seq;
+Bool is_wraparound(unsigned expected_seq_num, unsigned seq_num) {
+	return (expected_seq_num > seq_num) && (signed)(expected_seq_num - seq_num) < 0;
+}
 void B_input(Segment seg){
 	printf("B_input\n");
-	if(seg.seq_num != expected_seq) {
-		printf("expect:%u, get %u, seq is not expected, so drop it.\n",expected_seq, seg.seq_num);
-		return;
+	int i;
+	if(seg.seq_num == receiverB.expected_seq_num) {
+		for(i = 0; i < MSG_MAX; ++i) {
+			receiverB.buffer[receiverB.expected_next] = seg.payload[i];
+			receiverB.exist[receiverB.expected_next] = 1;
+			receiverB.expected_next += 1;
+			receiverB.expected_next %= receiverB.buffer_size;
+			receiverB.expected_seq_num += 1;
+		}
+	} else if(seg.seq_num > receiverB.expected_seq_num) {
+		int delta_seq_num = seg.seq_num - receiverB.expected_seq_num;
+		receiverB.cache_next = receiverB.expected_next + delta_seq_num;
+		receiverB.cache_next %= receiverB.buffer_size;
+		for(i = 0; i < MSG_MAX; ++i) {
+			receiverB.buffer[receiverB.cache_next] = seg.payload[i];
+			receiverB.exist[receiverB.cache_next] = 1;
+			receiverB.cache_next += 1;
+			receiverB.cache_next %= receiverB.buffer_size;
+			receiverB.expected_seq_num += 1;
+		}
+	} else if(seg.seq_num < receiverB.expected_seq_num && is_wraparound(receiverB.expected_seq_num, seg.seq_num)) {
+		printf("seq_num occur wraparound\n");
+		int delta_seq_num = ~receiverB.expected_seq_num + 1 + seg.seq_num;
+		receiverB.cache_next = receiverB.expected_next + delta_seq_num;
+		receiverB.cache_next %= receiverB.buffer_size;
+		for(i = 0; i < MSG_MAX; ++i) {
+			receiverB.buffer[receiverB.cache_next] = seg.payload[i];
+			receiverB.exist[receiverB.cache_next] = 1;
+			receiverB.cache_next += 1;
+			receiverB.cache_next %= receiverB.buffer_size;
+			receiverB.expected_seq_num += 1;
+		}
+	} else {
+		printf("redundant segment\n, drop it, should send redundant ack\n");
 	}
-	if(seg.check_sum + ~calculate_check_sum(&seg) != 0xffffffff) {
-		printf("check_sum is not correct, so drop it\n");
-		return;
-	}
-	printf("expect:%u, get %u\n",expected_seq, seg.seq_num);
-	Message msg;
+	if(receiverB.tail < receiverB.expected_next) receiverB.tail = receiverB.expected_next; 
+	if(receiverB.tail < receiverB.cache_next) receiverB.tail = receiverB.cache_next;
+	receive(B, &receiverB);
 	Segment echo_seg;
-	for(int i = 0; i < MSG_MAX; ++i) {
-		msg.data[i] = seg.payload[i];
-		echo_seg.payload[i] = seg.payload[i] - 'a' + 'A';
-	}
-	echo_seg.seq_num = seq;
-	echo_seg.rwnd = 2000;
-	echo_seg.ack_num = expected_seq + MSG_MAX;
+	echo_seg.ack_num = seg.seq_num + MSG_MAX;
+	echo_seg.seq_num = 0;
+	for(i = 0; i < MSG_MAX; ++i) echo_seg.payload[i] = seg.payload[i] - 'a' + 'A';
 	echo_seg.check_sum = calculate_check_sum(&echo_seg);
-
-	expected_seq = seg.seq_num + MSG_MAX;
-	seq = seq + MSG_MAX;
+	echo_seg.rwnd = receiverB.buffer_size - (receiverB.tail - receiverB.head);
 	tolayer3(B, echo_seg);
 }
 void A_timerinterrupt(){
 	printf("A_timerinterrupt\n");
-	senderA->next = senderA->head;
-	senderA->is_timing = 0;
+	senderA->next = senderB->head;
 	try_send(A);
+}
+void B_timerinterrupt(){
+	printf("B_timerinterrupt\n");
 }
 
 void A_init() {
@@ -431,13 +496,9 @@ void A_init() {
 	senderA->expected_ack_num = 94;
 }
 void B_init() {
-	expected_seq = 94;
-	seq = 217;
-}
-
-void B_output(Message msg){
-	printf("B-output.\n");
-}
-void B_timerinterrupt(){
-	printf("B_timerinterrupt\n");
+	senderB = Transport_layer_sender_Construct();
+	receiverB.buffer_size = BUFFER_SIZE;
+	receiverB.expected_next = 94;
+	receiverB.head = receiverB.expected_next = receiverB.cache_next = receiverB.tail = 0;
+	memset(receiverB.exist, 0, sizeof(receiverB.exist));
 }
