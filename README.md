@@ -91,5 +91,5 @@ auto.sh  datagram.h  event_manager.c  event_manager.h  main.c  makefile  node.c 
 prettytable
 pandas
 ```
-4. MSI-protocal-mul-cache目录里的[outline.md](./MSI-protocal-mul-cache/outline.md)为MSI模拟器的设计思路和具体使用方法
+4. MSI-protocal-mul-cache目录里的[outline.md](MSI-protocol-mul-cache/outline.md)为MSI模拟器的设计思路和具体使用方法
 
