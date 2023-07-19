@@ -25,6 +25,7 @@ bus为cache提供服务，将caches和memory都连接到总线上，当总线接
 memory 为只需为总线提供读写服务。
 
 ## 类间关系图
+
 ```plantuml
 @startuml
 class Interpreter{
